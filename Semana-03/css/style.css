@@ -1,3 +1,9 @@
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 54px;
+}
+
 h2 {
   font-size: 30px;
   font-weight: 700;
@@ -16,28 +22,60 @@ a {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 288px);
   height: 100px;
+  padding: 0;
+  margin-left: 288px;
   box-shadow: 0px 4px 0px #ff0000;
+  background-color: #fff;
+}
+
+header > i {
+  position: relative;
+  top: 35px;
+  left: 35px;
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  color: #FF5500;
+}
+
+header > h1 {
+  position: absolute;
+  top: 23px;
+  left: 100px;
 }
 
 header > ul {
+  position: absolute;
+  top: 60px;
+  right: 20px;
   display: inline-block;
 }
 
 header > ul > li {
   display: inline-block;
   list-style-type: none;
+  margin-left: 20px;
+  font-size: 20px;
 }
 
 nav {
-  display: none;
-  position: relative;
-  top:  0;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 288px;
+  height: 100%;
   background-color: #ddd;
 }
 
 section {
   margin: 30px;
+}
+
+main {
+  padding-top: 100px;
+  padding-left: 288px;
 }
