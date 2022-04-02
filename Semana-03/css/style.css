@@ -215,7 +215,43 @@ nav > ul > li {
 #why-trackgenix{
   position: relative;
   height: 368px;
+  padding-top: 52px;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
+}
+
+#why-trackgenix > h2 {
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  margin-bottom: 20px;
+}
+
+#why-trackgenix > ul {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 350px;
+  height: 120px;
+  padding-left: 20px;
+}
+
+#why-trackgenix > ul > li {
+  font-size: 20px;
+}
+
+#why-trackgenix > img {
+  display: inline-block;
+  position: relative;
+  width: 280px;
+}
+
+#why-trackgenix > a {
+  color: #ff5500;
+  width: 67px;
+  height: 18px;
+  padding: 14px 36px;
+  border-radius: 5px;
+  border: 1px solid #ff5500;
 }
 
 /* CONTACT US */
