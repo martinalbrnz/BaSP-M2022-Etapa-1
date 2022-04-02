@@ -40,7 +40,7 @@ img {
 
 section {
   position: relative;
-  margin: 54px;
+  margin: 0 54px;
 }
 
 main {
@@ -62,19 +62,12 @@ main {
 header {
   position: fixed;
   top: 0;
-  width: calc(100% - 288px);
+  width: calc(1440px - 288px);
   height: 100px;
   z-index: 100;
   padding: 0;
   margin-left: 288px;
   box-shadow: 0px 4px 0px #ff0000;
-  background-color: #fff;
-}
-
-footer {
-  height: 100px;
-  margin-left: 288px;
-  box-shadow: inset 0 4px 0 #ff0000;
   background-color: #fff;
 }
 
@@ -147,13 +140,14 @@ nav > ul > li {
 
 #what-is-trackgenix{
   position: relative;
+  padding-top: 49px;
   height: 500px;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #what-is-trackgenix > h2 {
   position: absolute;
-  top: 0;
+  top: 84px;
 }
 
 #what-is-trackgenix > p {
@@ -173,29 +167,44 @@ nav > ul > li {
 
 /* FUNCTIONALITIES */
 
-#functionalities{
+#functionalities {
   position: relative;
+  padding-top: 50px;
   height: 461px;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
-.functionalities-item {
+#functionalities > h2 {
+  margin-bottom: 36px;
+}
+
+.functionalities-item:nth-child(3), .functionalities-item:nth-child(5) {
+  margin-left: 60px;
+}
+
+.functionalities-item { 
+  display: inline-block;
+  position: relative;
+  margin-bottom: 35px;
   width: 490px;
   height: 130px;
 }
 
 .functionalities-item > i {
+  margin-right: 10px;
   position: absolute;
   font-size: 130px;
 }
 
 .functionalities-item > h3 {
-  position: absolute;
+  width: 350px;
+  position: relative;
   left: 140px;
 }
 
 .functionalities-item > p {
-  position: absolute;
+  position: relative;
+  top: 5px;
   left: 140px;
   width: 350px;
   font-size: 14px;
@@ -255,3 +264,18 @@ nav > ul > li {
 
 /* FOOTER */
 
+#footer {
+  height: 100px;
+  width: calc(1440px - 288px);
+  padding-top: 25px;
+  right: 0px;
+  margin-left: 288px;
+  box-shadow: inset 0 4px 0 #ff0000;
+  background-color: #fff;
+}
+
+#footer > .social-media {
+  display: block;
+  text-align: center;
+  margin-bottom: 6px;
+}
