@@ -30,8 +30,8 @@ p {
 }
 
 a {
-  color: #000;
   text-decoration: none;
+  color: #000;
 }
 
 img {
@@ -77,9 +77,9 @@ header > i {
   position: relative;
   top: 35px;
   left: 35px;
-  font-size: 30px;
-  height: 30px;
   width: 30px;
+  height: 30px;
+  font-size: 30px;
   color: #FF5500;
 }
 
@@ -102,26 +102,26 @@ nav {
   padding: 35px 14px;
   top: 0;
   left: 0;
-  z-index: 200;
-  font-size: 20px;
   width: 288px;
   height: 100%;
+  z-index: 200;
   background-color: #ddd;
+  font-size: 20px;
 }
 
 #sidebar-search {
   width: 100%;
   height: 37px;
-  font-size: 14px;
   padding-left: 12px;
   margin-bottom: 78px;
   border-radius: 4px;
   border-color: #373867;
+  font-size: 14px;
 }
 
 nav > h2 {
-  font-size: 20px;
   margin-bottom: 40px;
+  font-size: 20px;
 }
 
 nav > ul {
@@ -130,8 +130,8 @@ nav > ul {
 }
 
 nav > ul > li {
-  line-height: 23px;
   margin: 20px 0;
+  line-height: 23px;
 }
 
 /* SECTIONS STYLES */
@@ -151,15 +151,15 @@ nav > ul > li {
 }
 
 #what-is-trackgenix > p {
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   top: 150px;
   width: 420px;
 }
 
 #what-is-trackgenix > img {
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   right: 0px;
   width: 525px;
   height: 401px;
@@ -183,23 +183,23 @@ nav > ul > li {
 }
 
 .functionalities-item { 
-  display: inline-block;
   position: relative;
-  margin-bottom: 35px;
+  display: inline-block;
   width: 490px;
   height: 130px;
+  margin-bottom: 35px;
 }
 
 .functionalities-item > i {
-  margin-right: 10px;
   position: absolute;
+  margin-right: 10px;
   font-size: 130px;
 }
 
 .functionalities-item > h3 {
-  width: 350px;
   position: relative;
   left: 140px;
+  width: 350px;
 }
 
 .functionalities-item > p {
@@ -239,84 +239,83 @@ nav > ul > li {
 }
 
 #why-trackgenix > img {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   top: 0px;
   left: 676px;
-  display: inline-block;
-  position: relative;
   width: 280px;
   height: 268px;
 }
 
 #why-trackgenix > a {
   position: absolute;
-  color: #ff5500;
-  width: 139px;
-  height: 46px;
   bottom: 50px;
   left: 0px;
-  text-align: center;
+  width: 139px;
+  height: 46px;
   padding: 14px 36px;
   border-radius: 5px;
   border: 1px solid #ff5500;
+  text-align: center;
+  color: #ff5500;
 }
 
 /* CONTACT US */
 
 #contact-us{
   position: relative;
-  padding: 50px 0;
   height: 512px;
+  padding: 50px 0;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #contact-name, #contact-email {
   display: inline-block;
-  margin-top: 50px;
-  padding-left: 10px;
   width: 500px;
   height: 37px;
+  margin-top: 50px;
+  padding-left: 10px;
 }
 
 #contact-area {
-  color: #767676;
-  font-size: calc(40px /3);
-  border: 0.5px solid #767676;
-  border-radius: 2px;
-  height: 37px;
   width: 1004px;
+  height: 37px;
   margin: 24px 0;
+  border-radius: 2px;
+  border: 0.5px solid #767676;
+  font-size: calc(40px /3);
+  color: #767676;
 }
 
 #contact-message {
-  color: #767676;
-  font-size: calc(40px /3);
-  border: 0.5px solid #767676;
-  border-radius: 2px;
-  height: 140px;
   width: 1004px;
+  height: 140px;
+  margin-bottom: 24px;
   padding-top: 10px;
   padding-left: 5px;
-  margin-bottom: 24px;
+  border-radius: 2px;
+  border: 0.5px solid #767676;
+  font-size: calc(40px /3);
+  color: #767676;
 }
 
 .contact-form-send {
-  color:  #fff;
-  background-color: #ff5500;
   height: 46px;
   padding: 14px 36px;
   border: 1px solid #ff5500;
   border-radius: 5px;
+  background-color: #ff5500;
+  color:  #fff;
 }
 
 .contact-form-reset {
-  color: #ff5500;
-  background-color: #fff;
   height: 46px;
-  padding: 14px 36px;
   margin-left: 45px;
+  padding: 14px 36px;
   border: 1px solid #ff5500;
   border-radius: 5px;
+  background-color: #fff;
+  color: #ff5500;
 }
 
 /* OUR HISTORY */
@@ -332,8 +331,8 @@ nav > ul > li {
   position: absolute;
   right: 0;
   top: 80px;
-  height: 220px;
   width: 570px;
+  height: 220px;
 }
 
 .our-history-paragraph > p {
@@ -343,10 +342,10 @@ nav > ul > li {
 
 #our-history > img {
   display: inline-block;
-  margin-right: 30px;
-  margin-top: 30px;
   width: 435px;
   height: 220px;
+  margin-top: 30px;
+  margin-right: 30px;
 }
 
 /* OUR SERVICES */
@@ -359,8 +358,8 @@ nav > ul > li {
 }
 
 .our-services-item {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   width: 230px;
 }
 
@@ -370,18 +369,18 @@ nav > ul > li {
 }
 
 .our-services-item > ol {
+  height: 130px;
   padding: 20px;
-  height: 130;
 }
 
 /* FOOTER */
 
 #footer {
-  height: 100px;
-  width: calc(1440px - 288px);
-  padding-top: 25px;
   right: 0px;
+  width: calc(1440px - 288px);
+  height: 100px;
   margin-left: 288px;
+  padding-top: 25px;
   box-shadow: inset 0 4px 0 #ff0000;
   background-color: #fff;
 }
