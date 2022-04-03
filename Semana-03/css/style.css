@@ -265,8 +265,58 @@ nav > ul > li {
 
 #contact-us{
   position: relative;
+  padding: 50px 0;
   height: 512px;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
+}
+
+#contact-name, #contact-email {
+  display: inline-block;
+  margin-top: 50px;
+  padding-left: 10px;
+  width: 500px;
+  height: 37px;
+}
+
+#contact-area {
+  color: #767676;
+  font-size: calc(40px /3);
+  border: 0.5px solid #767676;
+  border-radius: 2px;
+  height: 37px;
+  width: 1004px;
+  margin: 24px 0;
+}
+
+#contact-message {
+  color: #767676;
+  font-size: calc(40px /3);
+  border: 0.5px solid #767676;
+  border-radius: 2px;
+  height: 140px;
+  width: 1004px;
+  padding-top: 10px;
+  padding-left: 5px;
+  margin-bottom: 24px;
+}
+
+.contact-form-send {
+  color:  #fff;
+  background-color: #ff5500;
+  height: 46px;
+  padding: 14px 36px;
+  border: 1px solid #ff5500;
+  border-radius: 5px;
+}
+
+.contact-form-reset {
+  color: #ff5500;
+  background-color: #fff;
+  height: 46px;
+  padding: 14px 36px;
+  margin-left: 45px;
+  border: 1px solid #ff5500;
+  border-radius: 5px;
 }
 
 /* OUR HISTORY */
