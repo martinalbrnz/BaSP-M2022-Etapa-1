@@ -274,11 +274,29 @@ nav > ul > li {
 #our-history{
   position: relative;
   height: 380px;
+  margin-top: 50px;
   box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
+.our-history-paragraph {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  height: 220px;
+  width: 570px;
+}
+
+.our-history-paragraph > p {
+  font-size: 15px;
+  line-height: 18px;
+}
+
 #our-history > img {
-  width: 100px;
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 30px;
+  width: 435px;
+  height: 220px;
 }
 
 /* OUR SERVICES */
@@ -286,6 +304,7 @@ nav > ul > li {
 #our-services{
   position: relative;
   height: 316px;
+  padding-top: 50px;
   padding-left: 135px;
 }
 
