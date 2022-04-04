@@ -43,6 +43,10 @@ section {
   margin: 0 54px;
 }
 
+section:not(:last-child) {
+  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
+}
+
 main {
   padding-top: 100px;
   padding-left: 288px;
@@ -109,6 +113,13 @@ nav {
   font-size: 20px;
 }
 
+.input-container > i {
+  position: absolute;
+  top: 47px;
+  left: 247px;
+  font-size: 15px;
+}
+
 #sidebar-search {
   width: 100%;
   height: 37px;
@@ -142,7 +153,6 @@ nav > ul > li {
   position: relative;
   padding-top: 49px;
   height: 500px;
-  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #what-is-trackgenix > h2 {
@@ -171,7 +181,6 @@ nav > ul > li {
   position: relative;
   padding-top: 50px;
   height: 461px;
-  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #functionalities > h2 {
@@ -216,7 +225,6 @@ nav > ul > li {
   position: relative;
   height: 368px;
   padding-top: 52px;
-  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #why-trackgenix > h2 {
@@ -266,7 +274,6 @@ nav > ul > li {
   position: relative;
   height: 512px;
   padding: 50px 0;
-  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 #contact-name, #contact-email {
@@ -324,7 +331,6 @@ nav > ul > li {
   position: relative;
   height: 380px;
   margin-top: 50px;
-  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
 }
 
 .our-history-paragraph {
