@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0 16px 0;
+  height: 100px;
+  width: 100%;
+  box-shadow: inset 0px 4px #ff0000;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: center;
+  gap: 21px;
+  flex-direction: row;
+  list-style: none;
+}
