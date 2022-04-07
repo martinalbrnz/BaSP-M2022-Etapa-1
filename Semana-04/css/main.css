@@ -5,6 +5,7 @@ main {
 section {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   padding: 30px 0;
 }
 
@@ -20,7 +21,7 @@ section:not(:last-child) {
 
 #what-is-trackgenix > img {
   order: -1;
-  width: 100%;
+  max-width: 525px;
 }
 
 /* FUNCTIONALITIES SECTION */
@@ -50,7 +51,7 @@ section:not(:last-child) {
 
 #why-trackgenix > img {
   order: -1;
-  width: 100%;
+  max-width: 280px;
 }
 
 #why-trackgenix > ul {
@@ -115,13 +116,22 @@ section:not(:last-child) {
 #our-history > img {
   order: -1;
   height: 180px;
-  width: 100%;
+  max-width: 435px;
 }
 
 /* OUR SERVICES */
 
 #our-services {
-  gap: 15px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 15px;
+}
+
+.our-services-item {
+  flex-basis: 200px;
+  width: 100%;
 }
 
 .our-services-item > ol {
