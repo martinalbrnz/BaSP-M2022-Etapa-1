@@ -1,5 +1,46 @@
 main {
-    padding: 50px;
+    padding: 0 50px;
 }
 
 img { width: 100px;} /* BORRAR DESPUES*/
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+section:not(:last-child) {
+  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
+}
+
+/* WHAT IS TRACKGENIX SECTION  */
+
+#what-is-trackgenix > h2{
+  margin: 20px 0;
+}
+
+#what-is-trackgenix > img {
+  order: -1;
+  width: 100%;
+}
+
+/* FUNCTIONALITIES SECTION */
+
+#functionalities {
+  gap: 15px;
+}
+#functionalities > h2 {
+  margin-bottom: 10px;
+}
+
+.functionalities-item {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.functionalities-item > i {
+  font-size: 40px;
+  
+}
