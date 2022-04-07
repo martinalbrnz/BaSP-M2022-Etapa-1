@@ -118,3 +118,12 @@ section:not(:last-child) {
   width: 100%;
 }
 
+/* OUR SERVICES */
+
+#our-services {
+  gap: 15px;
+}
+
+.our-services-item > ol {
+  padding-left: 20px;
+}
