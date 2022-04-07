@@ -105,3 +105,16 @@ section:not(:last-child) {
   background-color: #fff;
   color: #ff5500;
 }
+
+/* OUR HISTORY */
+
+#our-history > h2{
+  margin: 20px 0;
+}
+
+#our-history > img {
+  order: -1;
+  height: 180px;
+  width: 100%;
+}
+
