@@ -69,3 +69,39 @@ section:not(:last-child) {
   color: #ff5500;
 }
 
+/* CONTACT US SECTION */
+
+#contact-us > h2{
+  margin-bottom: 20px;
+}
+
+#contact-form > input, select, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #555;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button {
+  height: 46px;
+  padding: 14px 36px;
+  border: 1px solid #ff5500;
+  border-radius: 5px;
+}
+
+.contact-form-send {
+  background-color: #ff5500;
+  color:  #fff;
+}
+
+.contact-form-reset {
+  background-color: #fff;
+  color: #ff5500;
+}
