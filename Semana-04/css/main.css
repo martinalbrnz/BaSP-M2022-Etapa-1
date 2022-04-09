@@ -17,9 +17,8 @@ section:not(:last-child) {
 }
 
 .more-info-link {
-  width: 107px;
+  width: fit-content;
   height: 37px;
-  margin-top: 50px;
   padding: 9.5px 36px;
   border-radius: 5px;
   border: 1px solid #ff5500;
@@ -41,6 +40,10 @@ section:not(:last-child) {
 #what-is-trackgenix > img {
   order: -1;
   max-width: 100%;
+}
+
+#what-is-trackgenix > article > a {
+  display: none;
 }
 
 /* FUNCTIONALITIES SECTION */
@@ -70,12 +73,13 @@ section:not(:last-child) {
   flex-basis: 600px;
 }
 
-#why-trackgenix > article > h2{
+#why-trackgenix > article > h2 {
   margin: 20px 0 10px 0;
 }
 
 #why-trackgenix > article > ul {
   padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 #why-trackgenix > img {
@@ -84,7 +88,6 @@ section:not(:last-child) {
   order: -1;
   max-width: 100%;
 }
-
 
 /* CONTACT US SECTION */
 
@@ -96,17 +99,17 @@ section:not(:last-child) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 15px;
   width: 100%;
 }
 
 #contact-form > input {
-  flex-basis: calc((481px - 32px - 32px) / 2);
+  flex-basis: calc((466px - 32px - 32px) / 2);
   flex-grow: 1;
 }
 
 #contact-form > input, select, textarea {
   width: 100%;
-  margin-bottom: 15px;
   padding: 10px 12px;
   border: 1px solid #555;
   border-radius: 4px;
@@ -118,6 +121,7 @@ section:not(:last-child) {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 15px;
   align-items: center;
   width: 100%;
 }
@@ -189,13 +193,9 @@ section:not(:last-child) {
   }
   /* WHAT IS TRACKGENIX SECTION  */
 
-  /* FUNCTIONALITIES SECTION */
-
-  /* WHY TRACKGENIX */
-
-  /* CONTACT US SECTION */
-
-  /* OUR HISTORY */
+  #what-is-trackgenix > article > a {
+    display: block;
+  }
 
   /* OUR SERVICES */
 
@@ -209,8 +209,6 @@ section:not(:last-child) {
 }
 
 @media screen and (min-width: 1024px) {
-  /* GLOBAL SECTION */
-
   /* WHAT IS TRACKGENIX SECTION  */
 
   #what-is-trackgenix > img {
@@ -229,21 +227,36 @@ section:not(:last-child) {
   }
 
   #what-is-trackgenix > article > p {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
-
-
-
-  /* FUNCTIONALITIES SECTION */
 
   /* WHY TRACKGENIX */
 
-  /* CONTACT US SECTION */
+  #why-trackgenix > img {
+    flex-basis: 390px;
+    flex-grow: 0;
+    order: 2;
+    width: 200px;
+  }
+
+  #why-trackgenix > article {
+    flex-basis: 390px;
+    flex-grow: 3;
+    margin-right: 30px;
+    width: 200px;
+    line-height: 30px;
+  }
+
+  #why-trackgenix > article > p {
+    margin-bottom: 40px;
+  }
 
   /* OUR HISTORY */
+
   #our-history {
     align-items: stretch;
   }
+
   #our-history > img {
     flex-grow: 1;
     flex-basis: 360px;
@@ -257,7 +270,5 @@ section:not(:last-child) {
     flex-basis: 420px; 
     margin-left: 30px;
   }
-
-  /* OUR SERVICES */
 
 }
