@@ -19,12 +19,18 @@ header > h1 {
 }
 
 header > ul {
-  display: flex;
-  gap: 10px;
-  flex-direction: row;
-  list-style: none;
+  display: none;
 }
 
 header > ul > li {
   align-self: flex-start;
+}
+
+@media screen and (min-width: 481px) {
+  header > ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    list-style: none;
+  }
 }

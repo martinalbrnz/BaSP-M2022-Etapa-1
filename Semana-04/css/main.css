@@ -1,10 +1,13 @@
+/* GLOBAL SECTION */
+
 main {
-    padding: 0 50px;
+    padding: 0 32px;
 }
 
 section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: stretch;
   padding: 30px 0;
 }
@@ -15,13 +18,17 @@ section:not(:last-child) {
 
 /* WHAT IS TRACKGENIX SECTION  */
 
-#what-is-trackgenix > h2{
+#what-is-trackgenix > article {
+  flex-grow: 1;
+}
+
+#what-is-trackgenix > article > h2{
   margin: 20px 0;
 }
 
 #what-is-trackgenix > img {
   order: -1;
-  max-width: 525px;
+  max-width: 100%;
 }
 
 /* FUNCTIONALITIES SECTION */
@@ -29,14 +36,15 @@ section:not(:last-child) {
 #functionalities {
   gap: 15px;
 }
+
 #functionalities > h2 {
+  width: 100%;
   margin-bottom: 10px;
 }
 
 .functionalities-item {
-  display: flex;
-  flex-direction: column;
-  
+  flex-grow: 1;
+  flex-basis: 450px;
 }
 
 .functionalities-item > i {
@@ -45,23 +53,30 @@ section:not(:last-child) {
 
 /* WHY TRACKGENIX */
 
-#why-trackgenix > h2{
+#why-trackgenix > article {
+  flex-grow: 1;
+  flex-basis: 600px;
+}
+
+#why-trackgenix > article > h2{
   margin: 20px 0 10px 0;
 }
 
-#why-trackgenix > img {
-  order: -1;
-  max-width: 280px;
+#why-trackgenix > article > ul {
+  padding-left: 20px;
 }
 
-#why-trackgenix > ul {
-  padding-left: 20px;
+#why-trackgenix > img {
+  flex-grow: 1;
+  flex-basis: 300px;
+  order: -1;
+  max-width: 100%;
 }
 
 #why-trackgenix > a {
   width: 107px;
   height: 37px;
-  margin-top: 10px;
+  margin-top: 50px;
   padding: 9.5px 36px;
   border-radius: 5px;
   border: 1px solid #ff5500;
@@ -72,8 +87,20 @@ section:not(:last-child) {
 
 /* CONTACT US SECTION */
 
-#contact-us > h2{
+#contact-us > h2 {
   margin-bottom: 20px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#contact-form > input {
+  flex-basis: calc((481px - 32px - 32px) / 2);
+  flex-grow: 1;
 }
 
 #contact-form > input, select, textarea {
@@ -87,10 +114,16 @@ section:not(:last-child) {
 
 .form-buttons {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .form-button {
+  flex-basis: 181px;
+  flex-grow: 1;
   height: 46px;
   padding: 14px 36px;
   border: 1px solid #ff5500;
@@ -109,14 +142,23 @@ section:not(:last-child) {
 
 /* OUR HISTORY */
 
-#our-history > h2{
+#our-history {
+  align-items: stretch;
+}
+
+#our-history > h2 {
+  width: 100%;
   margin: 20px 0;
+}
+
+.our-history-paragraph {
+  height: fit-content;
+  max-width: 100%;
 }
 
 #our-history > img {
   order: -1;
-  height: 180px;
-  max-width: 435px;
+  max-width: 100%;
 }
 
 /* OUR SERVICES */
@@ -127,13 +169,73 @@ section:not(:last-child) {
   justify-content: space-between;
   align-content: flex-start;
   row-gap: 15px;
+  width: 100%;
 }
 
 .our-services-item {
-  flex-basis: 200px;
   width: 100%;
 }
 
 .our-services-item > ol {
   padding-left: 20px;
+}
+
+@media screen and (min-width: 481px) {
+  /* GLOBAL SECTION */
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* WHAT IS TRACKGENIX SECTION  */
+
+  /* FUNCTIONALITIES SECTION */
+
+  /* WHY TRACKGENIX */
+
+  /* CONTACT US SECTION */
+
+  /* OUR HISTORY */
+
+  /* OUR SERVICES */
+
+  #our-services {
+    justify-content: center;
+  }
+
+  .our-services-item {
+    flex-basis: calc(381px / 3);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* GLOBAL SECTION */
+
+  /* WHAT IS TRACKGENIX SECTION  */
+
+  /* FUNCTIONALITIES SECTION */
+
+  /* WHY TRACKGENIX */
+
+  /* CONTACT US SECTION */
+
+  /* OUR HISTORY */
+  #our-history {
+    align-items: stretch;
+  }
+  #our-history > img {
+    flex-grow: 1;
+    flex-basis: 360px;
+    max-width: 500px;
+    order: 1;
+  }
+
+  .our-history-paragraph {
+    flex-grow: 4;
+    order: 2;
+    flex-basis: 420px; 
+    margin-left: 30px;
+  }
+
+  /* OUR SERVICES */
+
 }
