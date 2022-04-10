@@ -2,23 +2,48 @@ nav {
   display: none;
   position: absolute;
   position: fixed;
+  padding: 35px 14px;
   top: 0;
   left: 0;
+  height: 100vh;
+  width: 288px;
+  background-color: #dddddd;
+}
+
+.input-container > i {
+  position: absolute;
+  top: 46px;
+  right: 25px;
+  font-size: 15px;
+}
+
+#sidebar-search {
+  width: 100%;
+  height: 37px;
+  padding-left: 12px;
+  border-radius: 4px;
+  border: 1px solid #373867;
+  font-size: 14px;
+}
+
+nav > p {
+  margin-top: 68px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  list-style-type: none;
+  line-height: 23px;
 }
 
 @media screen and (min-width: 481px) {
   nav {
     display: flex;
-    height: 100vh;
-    width: 288px;
-    background-color: #dddddd;
+    flex-direction: column;
   }
 }
-
-/* @media screen and (min-width: 1024px) {
-  header, footer, main {
-    margin-left: 288px;
-    max-width: calc(100% - 288px);
-  }
-} */
-
