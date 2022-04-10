@@ -57,20 +57,17 @@ section:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.functionalities-item {
-  flex-grow: 1;
-  flex-basis: 450px;
-}
-
 .functionalities-item > i {
+  align-self: center;
   font-size: 40px;
 }
 
 /* WHY TRACKGENIX */
 
 #why-trackgenix > article {
-  flex-grow: 1;
-  flex-basis: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #why-trackgenix > article > h2 {
@@ -149,11 +146,11 @@ section:not(:last-child) {
 
 #our-history {
   align-items: stretch;
+  gap: 20px;
 }
 
 #our-history > h2 {
   width: 100%;
-  margin: 20px 0;
 }
 
 .our-history-paragraph {
@@ -185,6 +182,8 @@ section:not(:last-child) {
   padding-left: 20px;
 }
 
+/* MEDIA QUERY SCREEN WIDTH EQUAL OR BIGGER THAN 481PX */
+
 @media screen and (min-width: 481px) {
   /* GLOBAL SECTION */
   section {
@@ -195,6 +194,19 @@ section:not(:last-child) {
 
   #what-is-trackgenix > article > a {
     display: block;
+  }
+
+  /* FUNCTIONALITIES */
+
+  .functionalities-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  .functionalities-item > i {
+    align-self: center;
+    font-size: 100px;
   }
 
   /* OUR SERVICES */
@@ -208,18 +220,20 @@ section:not(:last-child) {
   }
 }
 
+/* MEDIA QUERY SCREEN WIDTH EQUAL OR BIGGER THAN 1024PX */
+
 @media screen and (min-width: 1024px) {
   /* WHAT IS TRACKGENIX SECTION  */
 
   #what-is-trackgenix > img {
     flex-grow: 1;
-    flex-basis: 390px;
+    flex-basis: 300px;
     order: 2;
     width: 200px;
   }
 
   #what-is-trackgenix > article {
-    flex-basis: 390px;
+    flex-basis: 280px;
     flex-grow: 1;
     margin-right: 30px;
     width: 200px;
@@ -230,17 +244,24 @@ section:not(:last-child) {
     margin-bottom: 40px;
   }
 
+  /* FUNCTIONALITIES */
+
+  .functionalities-item {
+    flex-grow: 1;
+    flex-basis: 40%;
+  }
+
   /* WHY TRACKGENIX */
 
   #why-trackgenix > img {
-    flex-basis: 390px;
+    flex-basis: 300px;
     flex-grow: 0;
     order: 2;
     width: 200px;
   }
 
   #why-trackgenix > article {
-    flex-basis: 390px;
+    flex-basis: 280px;
     flex-grow: 3;
     margin-right: 30px;
     width: 200px;
@@ -253,22 +274,18 @@ section:not(:last-child) {
 
   /* OUR HISTORY */
 
-  #our-history {
-    align-items: stretch;
-  }
-
   #our-history > img {
     flex-grow: 1;
-    flex-basis: 360px;
+    flex-basis: 220px;
     max-width: 500px;
+    width: 220px;
     order: 1;
   }
 
   .our-history-paragraph {
-    flex-grow: 4;
+    flex-grow: 5;
     order: 2;
-    flex-basis: 420px; 
-    margin-left: 30px;
+    flex-basis: 432px; 
   }
 
 }
