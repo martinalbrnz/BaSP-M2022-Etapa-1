@@ -275,15 +275,14 @@ section:not(:last-child) {
   /* OUR HISTORY */
 
   #our-history > img {
-    flex-grow: 1;
+    flex-grow: 3;
     flex-basis: 220px;
-    max-width: 500px;
     width: 220px;
     order: 1;
   }
 
   .our-history-paragraph {
-    flex-grow: 5;
+    flex-grow: 1;
     order: 2;
     flex-basis: 432px; 
   }
