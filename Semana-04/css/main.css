@@ -1,7 +1,9 @@
 /* GLOBAL SECTION */
 
 main {
-    padding: 0 32px;
+  flex-basis: 200px;
+  flex-grow: 4;
+  padding: 0 32px;
 }
 
 section {
@@ -57,7 +59,18 @@ section:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.functionalities-item > i {
+.functionalities-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.functionalities-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.functionalities-item-icon {
   align-self: center;
   font-size: 40px;
 }
@@ -199,14 +212,18 @@ section:not(:last-child) {
   /* FUNCTIONALITIES */
 
   .functionalities-item {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
-  .functionalities-item > i {
-    align-self: center;
+
+  .functionalities-item-icon {
     font-size: 100px;
+  }
+
+  .functionalities-item-icon > i {
+    text-align: center;
+    width: 100px;
   }
 
   /* OUR SERVICES */

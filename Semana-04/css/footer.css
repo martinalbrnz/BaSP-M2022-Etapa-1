@@ -6,6 +6,8 @@ footer {
   padding: 26px 0 16px 0;
   height: 100px;
   width: 100%;
+  z-index: 100;
+  background-color: #fff;
   box-shadow: inset 0px 4px #ff0000;
 }
 
