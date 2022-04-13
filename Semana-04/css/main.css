@@ -198,11 +198,6 @@ section:not(:last-child) {
 /* MEDIA QUERY SCREEN WIDTH EQUAL OR BIGGER THAN 481PX */
 
 @media screen and (min-width: 481px) {
-  /* GLOBAL SECTION */
-  section {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   /* WHAT IS TRACKGENIX SECTION  */
 
   #what-is-trackgenix > article > a {
@@ -271,17 +266,16 @@ section:not(:last-child) {
   /* WHY TRACKGENIX */
 
   #why-trackgenix > img {
-    flex-basis: 300px;
-    flex-grow: 0;
+    flex-basis: 200px;
+    flex-grow: 1;
     order: 2;
     width: 200px;
   }
 
   #why-trackgenix > article {
     flex-basis: 280px;
-    flex-grow: 3;
+    flex-grow: 1;
     margin-right: 30px;
-    width: 200px;
     line-height: 30px;
   }
 
