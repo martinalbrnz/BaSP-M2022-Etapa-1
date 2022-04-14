@@ -8,7 +8,6 @@ main {
 
 section {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
   padding: 30px 0;
@@ -107,7 +106,6 @@ section:not(:last-child) {
 
 #contact-form {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 15px;
   width: 100%;
@@ -128,7 +126,6 @@ section:not(:last-child) {
 
 .form-buttons {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
@@ -179,7 +176,6 @@ section:not(:last-child) {
 /* OUR SERVICES */
 
 #our-services {
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;

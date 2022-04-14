@@ -31,7 +31,6 @@ header > ul > li {
   header > ul {
     display: flex;
     gap: 10px;
-    flex-direction: row;
     list-style: none;
   }
 }
