@@ -1,5 +1,5 @@
 # Trackgenix 
-Trackgenix is a time tracking app
+Trackgenix is a time tracking app.
 
 ## Week 02
 This week he had to write the html file for the layout made in Figma in week 1.
@@ -11,5 +11,9 @@ The use of flexbox and grid is forbidden.
 
 ## Week 04
 This week we had to style the landing from week 2 using flexbox.
-The styles must be responsive and the breakpoints should be 480, 768 and 1024 px
+The styles must be responsive and the breakpoints should be 480, 768 and 1024 px.
 The styles must be in a css folder, and separated in reset, header, nav, etc...
+
+## Week 05
+This week we had to practice Javascript, with ES5 specification.
+The topics include: Variables and operators, strings, arrays, control structures and functions.
