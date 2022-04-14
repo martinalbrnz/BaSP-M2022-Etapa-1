@@ -18,3 +18,4 @@ Page can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-04/
 ## Week 05
 This week we had to practice Javascript, with ES5 specification.
 The topics include: Variables and operators, strings, arrays, control structures and functions.
+Exercise resolutions can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
