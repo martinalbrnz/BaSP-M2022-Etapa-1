@@ -1,11 +1,5 @@
 /* GLOBAL SECTION */
 
-main {
-  flex-basis: 200px;
-  flex-grow: 4;
-  padding: 0 32px;
-}
-
 section {
   display: flex;
   flex-wrap: wrap;

@@ -7,6 +7,13 @@ body {
   flex-wrap: wrap;
 }
 
+main {
+  flex-basis: 200px;
+  flex-grow: 4;
+  padding: 0 32px;
+}
+
+
 h1, h2, h3 {
   font-weight: 700;
 }
