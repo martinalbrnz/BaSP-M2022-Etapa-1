@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 75px;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 4px #ff0000;
+}
+
+header > i {
+  align-self: center;
+  margin-right: 25px;
+  font-size: 30px;
+}
+
+header > h1 {
+  align-self: center;
+  flex-grow: 1;
+}
+
+header > ul {
+  display: none;
+}
+
+header > ul > li {
+  align-self: flex-start;
+}
+
+@media screen and (min-width: 481px) {
+  header > ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+  }
+}

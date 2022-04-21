@@ -26,3 +26,11 @@ This week we had to practice Javascript, with ES5 specification.
 ES6 and later should not be used in order to a better understanding of ES5.
 The topics include: Variables and operators, strings, arrays, control structures and functions.
 Exercise resolutions can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
+
+## Week 06
+This week we had to add Javascript to the app. 
+Added login and signup screens with form validations.
+Changed the folder structure to include the javascript files.
+Bonus: Validations in landing contact form.
+Every commit must have the prefix "BaSP-W06-2022: "
+Page can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
