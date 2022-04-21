@@ -12,10 +12,6 @@
 	box-shadow: 0px 5px 8px 1px #ccc;
 }
 
-h2 {
-	/* margin: 50px auto 0; */
-}
-
 #login-form {
 	display: flex;
 	flex-direction: column;
@@ -29,7 +25,7 @@ h2 {
 	border-bottom: 2px solid #ff5500;
 }
 
-input[type=checkbox] {
+#remember-me {
 	filter: hue-rotate(160deg);
 }
 
@@ -39,4 +35,10 @@ input[type=checkbox] {
 	border: 1px solid #ff5500;
 	color: #ff5500;
 	background-color: #fff;
+}
+
+.inline-alerts {
+	height: 20px;
+	border-radius: 4px;
+	color: #ff0000;
 }
