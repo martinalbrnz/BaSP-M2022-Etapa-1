@@ -43,3 +43,9 @@ a {
 img {
   border-radius: 5px;
 }
+
+.inline-alerts {
+	height: 20px;
+	border-radius: 4px;
+	color: #ff0000;
+}

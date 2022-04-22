@@ -1,16 +1,11 @@
 window.onload = function () {
-	var form = document.getElementById('login-form');
 	var loginEmail = document.getElementById('login-email');
 	var loginPassword = document.getElementById('login-pass');
 	var emailInlineAlert = document.createElement('p');
 	emailInlineAlert.classList.add('inline-alerts');
-	emailInlineAlert.classList.add('email-alert');
 
 	var passwordInlineAlert = document.createElement('p');
 	passwordInlineAlert.classList.add('inline-alerts');
-	passwordInlineAlert.classList.add('password-alert');
-
-
 
 	loginEmail.addEventListener('blur', validateEmail);
 	loginPassword.addEventListener('blur', validatePassword);
