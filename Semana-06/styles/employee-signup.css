@@ -11,7 +11,6 @@ label {
 	flex-basis: 293px;
 	flex-grow: 1;
 	min-width: 100px;
-	max-width: calc((100% / 2 ) - 15px );
 }
 
 input {
@@ -45,4 +44,10 @@ button {
 	flex-wrap: wrap;
 	gap: 20px 30px;
 	justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+	label {
+		max-width: calc((100% / 2 ) - 15px );
+	}
 }
