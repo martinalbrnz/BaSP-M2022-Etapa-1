@@ -1,22 +1,24 @@
+/* NOTES AT THE END WITH SOME RULES */
+
 window.onload = function () {
   // NAME
-  var signupName = document.getElementById("signup-name");
-  signupName.addEventListener("blur", validateName);
-  signupName.addEventListener("focus", quitSignupNameAlerts);
-  var signupNameInlineAlert = document.createElement("p");
-  signupNameInlineAlert.classList.add("inline-alerts");
+  var signupName = document.getElementById('signup-name');
+  signupName.addEventListener('blur', validateName);
+  signupName.addEventListener('focus', quitSignupNameAlerts);
+  var signupNameInlineAlert = document.createElement('p');
+  signupNameInlineAlert.classList.add('inline-alerts');
 
   function validateName() {
-    if (signupName.value == "") {
-      signupNameInlineAlert.textContent = "This is a required field";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+    if (signupName.value == '') {
+      signupNameInlineAlert.textContent = 'This is a required field';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
     } else if (signupName.value.length < 3) {
       signupNameInlineAlert.textContent =
-        "Name must have at least 3 characters";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+        'Name must have at least 3 characters';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
     } else if (hasNumbers(signupName.value)) {
-      signupNameInlineAlert.textContent = "Name can't contain a number";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+      signupNameInlineAlert.textContent = 'Name can\'t contain a number';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
     }
   }
 
@@ -25,23 +27,23 @@ window.onload = function () {
   }
 
   // SURNAME
-  var signupSurname = document.getElementById("signup-surname");
-  signupSurname.addEventListener("blur", validateSurname);
-  signupSurname.addEventListener("focus", quitSignupSurnameAlerts);
-  var signupSurnameInlineAlert = document.createElement("p");
-  signupSurnameInlineAlert.classList.add("inline-alerts");
+  var signupSurname = document.getElementById('signup-surname');
+  signupSurname.addEventListener('blur', validateSurname);
+  signupSurname.addEventListener('focus', quitSignupSurnameAlerts);
+  var signupSurnameInlineAlert = document.createElement('p');
+  signupSurnameInlineAlert.classList.add('inline-alerts');
 
   function validateSurname() {
-    if (signupSurname.value == "") {
-      signupSurnameInlineAlert.textContent = "This is a required field";
-      signupSurname.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+    if (signupSurname.value == '') {
+      signupSurnameInlineAlert.textContent = 'This is a required field';
+      signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
     } else if (signupSurname.value.length < 3) {
       signupSurnameInlineAlert.textContent =
-        "Surname must have at least 3 characters";
-      signupSurname.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+        'Surname must have at least 3 characters';
+      signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
     } else if (hasNumbers(signupSurname.value)) {
-      signupSurnameInlineAlert.textContent = "Surname can't contain a number";
-      signupSurname.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+      signupSurnameInlineAlert.textContent = 'Surname can\'t contain a number';
+      signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
     }
   }
 
@@ -50,33 +52,23 @@ window.onload = function () {
   }
 
   // ID NUMBER
-  var signupIDNumber = document.getElementById("signup-idn");
-  signupIDNumber.addEventListener("blur", validateIDNumber);
-  signupIDNumber.addEventListener("focus", quitSignupIDNumberAlerts);
-  var signupIDNumberInlineAlert = document.createElement("p");
-  signupIDNumberInlineAlert.classList.add("inline-alerts");
+  var signupIDNumber = document.getElementById('signup-idn');
+  signupIDNumber.addEventListener('blur', validateIDNumber);
+  signupIDNumber.addEventListener('focus', quitSignupIDNumberAlerts);
+  var signupIDNumberInlineAlert = document.createElement('p');
+  signupIDNumberInlineAlert.classList.add('inline-alerts');
 
   function validateIDNumber() {
-    if (signupIDNumber.value == "") {
-      signupIDNumberInlineAlert.textContent = "This is a required field";
-      signupIDNumber.insertAdjacentElement(
-        "afterend",
-        signupIDNumberInlineAlert
-      );
+    if (signupIDNumber.value == '') {
+      signupIDNumberInlineAlert.textContent = 'This is a required field';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
     } else if (signupIDNumber.value.length < 8) {
       signupIDNumberInlineAlert.textContent =
-        "ID Number must have at least 8 characters";
-      signupIDNumber.insertAdjacentElement(
-        "afterend",
-        signupIDNumberInlineAlert
-      );
+        'ID Number must have at least 8 characters';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
     } else if (!isOnlyNumbers(signupIDNumber.value)) {
-      signupIDNumberInlineAlert.textContent =
-        "ID Number can contain only numbers";
-      signupIDNumber.insertAdjacentElement(
-        "afterend",
-        signupIDNumberInlineAlert
-      );
+      signupIDNumberInlineAlert.textContent = 'ID Number can contain only numbers';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
     }
   }
 
@@ -85,19 +77,19 @@ window.onload = function () {
   }
 
   // BIRTH
-  var signupBirth = document.getElementById("signup-birth-date");
-  signupBirth.addEventListener("blur", validateBirth);
-  signupBirth.addEventListener("focus", quitSignupBirthAlerts);
-  var signupBirthInlineAlert = document.createElement("p");
-  signupBirthInlineAlert.classList.add("inline-alerts");
+  var signupBirth = document.getElementById('signup-birth-date');
+  signupBirth.addEventListener('blur', validateBirth);
+  signupBirth.addEventListener('focus', quitSignupBirthAlerts);
+  var signupBirthInlineAlert = document.createElement('p');
+  signupBirthInlineAlert.classList.add('inline-alerts');
 
   function validateBirth() {
-    if (signupBirth.value == "") {
-      signupBirthInlineAlert.textContent = "This is a required field";
-      signupBirth.insertAdjacentElement("afterend", signupBirthInlineAlert);
+    if (signupBirth.value == '') {
+      signupBirthInlineAlert.textContent = 'This is a required field';
+      signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
     } else if (!isFullAge(signupBirth.value)) {
-      signupBirthInlineAlert.textContent = "You must be +18";
-      signupBirth.insertAdjacentElement("afterend", signupBirthInlineAlert);
+      signupBirthInlineAlert.textContent = 'You must be +18';
+      signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
     }
   }
 
@@ -106,31 +98,31 @@ window.onload = function () {
   }
 
   // PHONE
-  var signupPhone = document.getElementById("signup-phone");
-  signupPhone.addEventListener("blur", validatePhone);
-  signupPhone.addEventListener("focus", quitSignupPhoneAlerts);
-  var signupPhoneInlineAlert = document.createElement("p");
-  signupPhoneInlineAlert.classList.add("inline-alerts");
+  var signupPhone = document.getElementById('signup-phone');
+  signupPhone.addEventListener('blur', validatePhone);
+  signupPhone.addEventListener('focus', quitSignupPhoneAlerts);
+  var signupPhoneInlineAlert = document.createElement('p');
+  signupPhoneInlineAlert.classList.add('inline-alerts');
 
   function validatePhone() {
-    if (signupPhone.value == "") {
-      signupPhoneInlineAlert.textContent = "This is a required field";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+    if (signupPhone.value == '') {
+      signupPhoneInlineAlert.textContent = 'This is a required field';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (
       (signupPhone.value.length != 10) &
       !isOnlyNumbers(signupPhone.value)
     ) {
       signupPhoneInlineAlert.textContent =
-        "Phone number must have 10 characters \n Phone number can contain only numbers";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+        'Phone number must have 10 characters \n Phone number can contain only numbers';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (signupPhone.value.length != 10) {
       signupPhoneInlineAlert.textContent =
-        "Phone number must have 10 characters";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+        'Phone number must have 10 characters';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (!isOnlyNumbers(signupPhone.value)) {
       signupPhoneInlineAlert.textContent =
-        "Phone number can contain only numbers";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+        'Phone number can contain only numbers';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     }
   }
 
@@ -139,24 +131,24 @@ window.onload = function () {
   }
 
   // ADDRESS
-  var signupAddress = document.getElementById("signup-address");
-  signupAddress.addEventListener("blur", validateAddress);
-  signupAddress.addEventListener("focus", quitSignupAddressAlerts);
-  var signupAddressInlineAlert = document.createElement("p");
-  signupAddressInlineAlert.classList.add("inline-alerts");
+  var signupAddress = document.getElementById('signup-address');
+  signupAddress.addEventListener('blur', validateAddress);
+  signupAddress.addEventListener('focus', quitSignupAddressAlerts);
+  var signupAddressInlineAlert = document.createElement('p');
+  signupAddressInlineAlert.classList.add('inline-alerts');
 
   function validateAddress() {
-    if (signupAddress.value == "") {
-      signupAddressInlineAlert.textContent = "This is a required field";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+    if (signupAddress.value == '') {
+      signupAddressInlineAlert.textContent = 'This is a required field';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
     } else if (signupAddress.value.length < 5) {
       signupAddressInlineAlert.textContent =
-        "Address must have at least 5 characters";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+        'Address must have at least 5 characters';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
     } else if (!addressValidator(signupAddress.value)) {
       signupAddressInlineAlert.textContent =
-        "Address must contain letters, numbers and a space between";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+        'Address must contain letters, numbers and a space between';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
     }
   }
 
@@ -165,20 +157,20 @@ window.onload = function () {
   }
 
   // CITY
-  var signupCity = document.getElementById("signup-city");
-  signupCity.addEventListener("blur", validateCity);
-  signupCity.addEventListener("focus", quitSignupCityAlerts);
-  var signupCityInlineAlert = document.createElement("p");
-  signupCityInlineAlert.classList.add("inline-alerts");
+  var signupCity = document.getElementById('signup-city');
+  signupCity.addEventListener('blur', validateCity);
+  signupCity.addEventListener('focus', quitSignupCityAlerts);
+  var signupCityInlineAlert = document.createElement('p');
+  signupCityInlineAlert.classList.add('inline-alerts');
 
   function validateCity() {
-    if (signupCity.value == "") {
-      signupCityInlineAlert.textContent = "This is a required field";
-      signupCity.insertAdjacentElement("afterend", signupCityInlineAlert);
+    if (signupCity.value == '') {
+      signupCityInlineAlert.textContent = 'This is a required field';
+      signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
     } else if (signupCity.value.length < 3) {
       signupCityInlineAlert.textContent =
-        "City name must have at least 3 characters";
-      signupCity.insertAdjacentElement("afterend", signupCityInlineAlert);
+        'City name must have at least 3 characters';
+      signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
     }
   }
 
@@ -187,24 +179,24 @@ window.onload = function () {
   }
 
   // ZIP CODE
-  var signupZip = document.getElementById("signup-zip-code");
-  signupZip.addEventListener("blur", validateZipCode);
-  signupZip.addEventListener("focus", quitSignupZipAlerts);
-  var signupZipInlineAlert = document.createElement("p");
-  signupZipInlineAlert.classList.add("inline-alerts");
+  var signupZip = document.getElementById('signup-zip-code');
+  signupZip.addEventListener('blur', validateZipCode);
+  signupZip.addEventListener('focus', quitSignupZipAlerts);
+  var signupZipInlineAlert = document.createElement('p');
+  signupZipInlineAlert.classList.add('inline-alerts');
 
   function validateZipCode() {
-    if (signupZip.value == "") {
-      signupZipInlineAlert.textContent = "This is a required field";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+    if (signupZip.value == '') {
+      signupZipInlineAlert.textContent = 'This is a required field';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
     } else if (
       !((signupZip.value.length <= 5) & (signupZip.value.length >= 4))
     ) {
-      signupZipInlineAlert.textContent = "ZIP code must have 4 o 5 characters";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+      signupZipInlineAlert.textContent = 'ZIP code must have 4 o 5 characters';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
     } else if (!isOnlyNumbers(signupZip.value)) {
-      signupZipInlineAlert.textContent = "ZIP code can contain only numbers";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+      signupZipInlineAlert.textContent = 'ZIP code can contain only numbers';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
     }
   }
 
@@ -213,21 +205,21 @@ window.onload = function () {
   }
 
   // EMAIL
-  var signupEmail = document.getElementById("signup-email");
-  signupEmail.addEventListener("blur", validateEmail);
-  signupEmail.addEventListener("focus", quitSignupEmailAlerts);
-  var signupEmailInlineAlert = document.createElement("p");
-  signupEmailInlineAlert.classList.add("inline-alerts");
+  var signupEmail = document.getElementById('signup-email');
+  signupEmail.addEventListener('blur', validateEmail);
+  signupEmail.addEventListener('focus', quitSignupEmailAlerts);
+  var signupEmailInlineAlert = document.createElement('p');
+  signupEmailInlineAlert.classList.add('inline-alerts');
 
   function validateEmail() {
     var emailRegExp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
-    if (signupEmail.value == "") {
-      signupEmailInlineAlert.textContent = "Email is required";
-      signupEmail.insertAdjacentElement("afterend", signupEmailInlineAlert);
+    if (signupEmail.value == '') {
+      signupEmailInlineAlert.textContent = 'Email is required';
+      signupEmail.insertAdjacentElement('afterend', signupEmailInlineAlert);
     } else if (!emailRegExp.test(signupEmail.value)) {
-      signupEmailInlineAlert.textContent = "Email is not valid";
-      signupEmail.insertAdjacentElement("afterend", signupEmailInlineAlert);
+      signupEmailInlineAlert.textContent = 'Email is not valid';
+      signupEmail.insertAdjacentElement('afterend', signupEmailInlineAlert);
     }
   }
 
@@ -236,17 +228,17 @@ window.onload = function () {
   }
 
   // PASSWORD
-  var signupPassword = document.getElementById("signup-pass");
-  signupPassword.addEventListener("blur", validatePassword);
-  signupPassword.addEventListener("focus", quitSignupPasswordAlerts);
-  var signupPasswordInlineAlert = document.createElement("p");
-  signupPasswordInlineAlert.classList.add("inline-alerts");
+  var signupPassword = document.getElementById('signup-pass');
+  signupPassword.addEventListener('blur', validatePassword);
+  signupPassword.addEventListener('focus', quitSignupPasswordAlerts);
+  var signupPasswordInlineAlert = document.createElement('p');
+  signupPasswordInlineAlert.classList.add('inline-alerts');
 
   function validatePassword() {
     if (signupPassword.value.length == 0) {
-      signupPasswordInlineAlert.textContent = "Password is required";
+      signupPasswordInlineAlert.textContent = 'Password is required';
       signupPassword.insertAdjacentElement(
-        "afterend",
+        'afterend',
         signupPasswordInlineAlert
       );
     } else if (
@@ -254,25 +246,14 @@ window.onload = function () {
       !hasNumbersAndChar(signupPassword.value)
     ) {
       signupPasswordInlineAlert.textContent =
-        "Password must have at least 8 characters\n Password must contain numbers and letters";
-      signupPassword.insertAdjacentElement(
-        "afterend",
-        signupPasswordInlineAlert
-      );
+        'Password must have at least 8 characters\n Password must contain numbers and letters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
     } else if (signupPassword.value.length < 8) {
-      signupPasswordInlineAlert.textContent =
-        "Password must have at least 8 characters";
-      signupPassword.insertAdjacentElement(
-        "afterend",
-        signupPasswordInlineAlert
-      );
+      signupPasswordInlineAlert.textContent = 'Password must have at least 8 characters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
     } else if (!hasNumbersAndChar(signupPassword.value)) {
-      signupPasswordInlineAlert.textContent =
-        "Password must contain numbers and letters";
-      signupPassword.insertAdjacentElement(
-        "afterend",
-        signupPasswordInlineAlert
-      );
+      signupPasswordInlineAlert.textContent = 'Password must contain numbers and letters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
     }
   }
 
@@ -281,41 +262,60 @@ window.onload = function () {
   }
 
   // REPEATED PASSWORD
-  var signupRepeatedPassword = document.getElementById("signup-repeated-pass");
-  signupRepeatedPassword.addEventListener("blur", validateRepeatedPassword);
-  signupRepeatedPassword.addEventListener(
-    "focus",
-    quitSignupRepeatedPasswordAlerts
-  );
-  var signupRepeatedPasswordInlineAlert = document.createElement("p");
-  signupRepeatedPasswordInlineAlert.classList.add("inline-alerts");
+  var signupRepeatedPassword = document.getElementById('signup-repeated-pass');
+  signupRepeatedPassword.addEventListener('blur', validateRepeatedPassword);
+  signupRepeatedPassword.addEventListener('focus',quitSignupRepeatedPasswordAlerts);
+  var signupRepeatedPasswordInlineAlert = document.createElement('p');
+  signupRepeatedPasswordInlineAlert.classList.add('inline-alerts');
 
   function validateRepeatedPassword() {
     if (signupRepeatedPassword.value.length == 0) {
-      signupRepeatedPasswordInlineAlert.textContent =
-        "This is a required field";
-      signupRepeatedPassword.insertAdjacentElement(
-        "afterend",
-        signupRepeatedPasswordInlineAlert
-      );
+      signupRepeatedPasswordInlineAlert.textContent = 'This is a required field';
+      signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
     } else if (signupRepeatedPassword.value != signupPassword.value) {
-      signupRepeatedPasswordInlineAlert.textContent =
-        "The passwords are not the same";
-      signupRepeatedPassword.insertAdjacentElement(
-        "afterend",
-        signupRepeatedPasswordInlineAlert
-      );
+      signupRepeatedPasswordInlineAlert.textContent = 'The passwords are not the same';
+      signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
     }
   }
 
   function quitSignupRepeatedPasswordAlerts() {
     signupRepeatedPasswordInlineAlert.remove();
   }
+
+  // CREATE BUTTON
+  var signupCreateButton = document.getElementById('signup-create-button');
+  var signupModal = document.getElementById('signup-modal');
+  var signupModalCloseButton = document.getElementsByClassName('close')[0];
+  var signupModalTitle = document.getElementById('modal-title');
+  var signupModalContent = document.getElementsByClassName('modal-content')[0];
+  
+  signupCreateButton.addEventListener('click', signupCreateButtonModal);
+  signupModalCloseButton.addEventListener('click', signupCreateButtonModal);
+
+  function signupCreateButtonModal () {
+    signupModal.classList.toggle('show-modal');
+    signupModalTitle.innerHTML='Successful signup! Yay!';
+    signupModalContent.innerHTML =`
+    Name: ${signupName.value} 
+    Last name: ${signupSurname.value} 
+    ID number: ${signupIDNumber.value} 
+    Birth: ${signupBirth.value} 
+    Phone: ${signupPhone.value} 
+    Address: ${signupAddress.value} 
+    City: ${signupCity.value} 
+    Zip code: ${signupZip.value} 
+    Email: ${signupEmail.value}`;
+
+  }
+
 };
+
+
+/*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/
 
 function hasNumbers(myString) {
   // the array numbers contain all the numbers
-  var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
   // if the char on index x is included in numbers, it is a number, so return true.
   for (var x = 0; x < myString.length; x++) {
@@ -359,7 +359,7 @@ function isOnlyNumbers(myString) {
 // wrong address   => false
 function addressValidator(myString) {
   var spaceTrigger = false;
-  var space = [" "];
+  var space = [' '];
 
   var alphaTrigger = false;
   var num = 0;
@@ -384,12 +384,12 @@ function addressValidator(myString) {
     } else {
       char++;
     }
-    if ((num > 0) & (char > 0)) {
+    if ((num > 0) && (char > 0)) {
       alphaTrigger = true;
     }
   }
 
-  return spaceTrigger & alphaTrigger;
+  return spaceTrigger && alphaTrigger;
 }
 
 // everything must be transformed in a Date prototype so everything can be instantiated
@@ -399,4 +399,16 @@ function isFullAge(date) {
 
   return new Date(thisMoment - date).getFullYear() - 1970 >= 18;
 }
+
+/* 
+NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/YEAR/CENTURY):
+- ELEMENTS ARE ORDERED BY APPEARANCE IN THE HTML FILE.
+- FUNCTIONS TO VALIDATE ARE AT THE END, JUST BEFORE THIS, PLEASE MANTAIN THE ORDER.
+- EACH ELEMENT MUST HAVE THE SELECTOR, THE BLUR AND FOCUS EVENTS AND THEN AN ELEMENT FOR THE OBSERVATIONS.
+- THIS IS NOT PYTHON, BE CAREFUL WITH & AND &&
+- IN SOME CASES, YOU MIGHT BE WONDERING, WHY DON'T YOU USE REGEX? WELL... IT'S INTENDED.
+- SAME APPLIES FOR EVERYTHING THAT CAN BE DONE WITH ES6 OR NEWER.
+- HAVE FUN!
+*/
+
 // a comment line for those regex i did not use F

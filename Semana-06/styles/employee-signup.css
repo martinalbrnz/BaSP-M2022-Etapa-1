@@ -18,7 +18,7 @@ input {
   border-color: #ddd;
 }
 
-button {
+#signup-create-button {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -43,6 +43,52 @@ button {
   flex-wrap: wrap;
   gap: 20px 30px;
   justify-content: space-between;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+
+.modal-container {
+  margin: 120px auto;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff5500;
+  padding: 20px;
+  color: #fff;
+}
+
+#modal-title {
+  font-size: 30px;
+}
+
+.close {
+  position: relative;
+  font-size: 30px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.show-modal {
+  display: block;
 }
 
 @media screen and (min-width: 1024px) {
