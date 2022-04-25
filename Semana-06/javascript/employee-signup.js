@@ -1,6 +1,11 @@
 /* NOTES AT THE END WITH SOME RULES */
 
 window.onload = function () {
+  // AUX VARIABLES
+  var inputValues = [];
+  var inputLabels =['Name: ', 'Last name: ', 'ID number: ','Birth date: ','Phone: ',
+  'Address: ','City: ','Zip code: ','Email: ','Password: ','Repeated password: '];
+
   // NAME
   var signupName = document.getElementById('signup-name');
   signupName.addEventListener('blur', validateName);
@@ -10,7 +15,7 @@ window.onload = function () {
 
   function validateName() {
     if (signupName.value == '') {
-      signupNameInlineAlert.textContent = 'This is a required field';
+      signupNameInlineAlert.textContent = 'Name is a required field';
       signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
     } else if (signupName.value.length < 3) {
       signupNameInlineAlert.textContent =
@@ -19,6 +24,8 @@ window.onload = function () {
     } else if (hasNumbers(signupName.value)) {
       signupNameInlineAlert.textContent = 'Name can\'t contain a number';
       signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
+    } else {
+      inputValues[0] = signupName.value;
     }
   }
 
@@ -35,15 +42,17 @@ window.onload = function () {
 
   function validateSurname() {
     if (signupSurname.value == '') {
-      signupSurnameInlineAlert.textContent = 'This is a required field';
+      signupSurnameInlineAlert.textContent = 'Last name is a required field';
       signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
     } else if (signupSurname.value.length < 3) {
       signupSurnameInlineAlert.textContent =
-        'Surname must have at least 3 characters';
+        'Last name must have at least 3 characters';
       signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
     } else if (hasNumbers(signupSurname.value)) {
-      signupSurnameInlineAlert.textContent = 'Surname can\'t contain a number';
+      signupSurnameInlineAlert.textContent = 'Last name can\'t contain a number';
       signupSurname.insertAdjacentElement('afterend', signupSurnameInlineAlert);
+    } else {
+      inputValues[1] = signupSurname.value;
     }
   }
 
@@ -60,7 +69,7 @@ window.onload = function () {
 
   function validateIDNumber() {
     if (signupIDNumber.value == '') {
-      signupIDNumberInlineAlert.textContent = 'This is a required field';
+      signupIDNumberInlineAlert.textContent = 'ID Number is a required field';
       signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
     } else if (signupIDNumber.value.length < 8) {
       signupIDNumberInlineAlert.textContent =
@@ -69,6 +78,8 @@ window.onload = function () {
     } else if (!isOnlyNumbers(signupIDNumber.value)) {
       signupIDNumberInlineAlert.textContent = 'ID Number can contain only numbers';
       signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
+    } else {
+      inputValues[2] = signupIDNumber.value;
     }
   }
 
@@ -85,11 +96,13 @@ window.onload = function () {
 
   function validateBirth() {
     if (signupBirth.value == '') {
-      signupBirthInlineAlert.textContent = 'This is a required field';
+      signupBirthInlineAlert.textContent = 'Birth date is a required field';
       signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
     } else if (!isFullAge(signupBirth.value)) {
       signupBirthInlineAlert.textContent = 'You must be +18';
       signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
+    } else {
+      inputValues[3] = signupBirth.value;
     }
   }
 
@@ -106,23 +119,25 @@ window.onload = function () {
 
   function validatePhone() {
     if (signupPhone.value == '') {
-      signupPhoneInlineAlert.textContent = 'This is a required field';
+      signupPhoneInlineAlert.textContent = 'Phone is a required field';
       signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (
       (signupPhone.value.length != 10) &
       !isOnlyNumbers(signupPhone.value)
     ) {
       signupPhoneInlineAlert.textContent =
-        'Phone number must have 10 characters \n Phone number can contain only numbers';
+        'Phone number must have 10 numeric characters';
       signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (signupPhone.value.length != 10) {
       signupPhoneInlineAlert.textContent =
-        'Phone number must have 10 characters';
+        'Phone number must have 10 numeric characters';
       signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
     } else if (!isOnlyNumbers(signupPhone.value)) {
       signupPhoneInlineAlert.textContent =
         'Phone number can contain only numbers';
       signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
+    } else {
+      inputValues[4] = signupPhone.value;
     }
   }
 
@@ -139,7 +154,7 @@ window.onload = function () {
 
   function validateAddress() {
     if (signupAddress.value == '') {
-      signupAddressInlineAlert.textContent = 'This is a required field';
+      signupAddressInlineAlert.textContent = 'Address is a required field';
       signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
     } else if (signupAddress.value.length < 5) {
       signupAddressInlineAlert.textContent =
@@ -149,6 +164,8 @@ window.onload = function () {
       signupAddressInlineAlert.textContent =
         'Address must contain letters, numbers and a space between';
       signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
+    } else {
+      inputValues[5] = signupAddress.value;
     }
   }
 
@@ -165,12 +182,14 @@ window.onload = function () {
 
   function validateCity() {
     if (signupCity.value == '') {
-      signupCityInlineAlert.textContent = 'This is a required field';
+      signupCityInlineAlert.textContent = 'City name is a required field';
       signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
     } else if (signupCity.value.length < 3) {
       signupCityInlineAlert.textContent =
         'City name must have at least 3 characters';
       signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
+    } else {
+      inputValues[6] = signupCity.value;
     }
   }
 
@@ -187,7 +206,7 @@ window.onload = function () {
 
   function validateZipCode() {
     if (signupZip.value == '') {
-      signupZipInlineAlert.textContent = 'This is a required field';
+      signupZipInlineAlert.textContent = 'ZIP Code is a required field';
       signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
     } else if (
       !((signupZip.value.length <= 5) & (signupZip.value.length >= 4))
@@ -197,6 +216,8 @@ window.onload = function () {
     } else if (!isOnlyNumbers(signupZip.value)) {
       signupZipInlineAlert.textContent = 'ZIP code can contain only numbers';
       signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
+    } else {
+      inputValues[7] = signupZip.value;
     }
   }
 
@@ -220,6 +241,8 @@ window.onload = function () {
     } else if (!emailRegExp.test(signupEmail.value)) {
       signupEmailInlineAlert.textContent = 'Email is not valid';
       signupEmail.insertAdjacentElement('afterend', signupEmailInlineAlert);
+    } else {
+      inputValues[8] = signupEmail.value;
     }
   }
 
@@ -246,7 +269,7 @@ window.onload = function () {
       !hasNumbersAndChar(signupPassword.value)
     ) {
       signupPasswordInlineAlert.textContent =
-        'Password must have at least 8 characters\n Password must contain numbers and letters';
+        'Password must have at least 8 characters including numbers and letters';
       signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
     } else if (signupPassword.value.length < 8) {
       signupPasswordInlineAlert.textContent = 'Password must have at least 8 characters';
@@ -254,6 +277,8 @@ window.onload = function () {
     } else if (!hasNumbersAndChar(signupPassword.value)) {
       signupPasswordInlineAlert.textContent = 'Password must contain numbers and letters';
       signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
+    } else {
+      inputValues[9] = signupPassword.value;
     }
   }
 
@@ -270,11 +295,13 @@ window.onload = function () {
 
   function validateRepeatedPassword() {
     if (signupRepeatedPassword.value.length == 0) {
-      signupRepeatedPasswordInlineAlert.textContent = 'This is a required field';
+      signupRepeatedPasswordInlineAlert.textContent = 'You must repeat the password';
       signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
     } else if (signupRepeatedPassword.value != signupPassword.value) {
       signupRepeatedPasswordInlineAlert.textContent = 'The passwords are not the same';
       signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
+    } else {
+      inputValues[10] = signupRepeatedPassword.value;
     }
   }
 
@@ -288,28 +315,62 @@ window.onload = function () {
   var signupModalCloseButton = document.getElementsByClassName('close')[0];
   var signupModalTitle = document.getElementById('modal-title');
   var signupModalContent = document.getElementsByClassName('modal-content')[0];
+  var inlineAlerts = document.getElementsByClassName('inline-alerts');
+  var signupModalListItems = document.getElementsByClassName('modal-list-item');
   
   signupCreateButton.addEventListener('click', signupCreateButtonModal);
   signupModalCloseButton.addEventListener('click', signupCreateButtonModal);
 
-  function signupCreateButtonModal () {
-    signupModal.classList.toggle('show-modal');
-    signupModalTitle.innerHTML='Successful signup! Yay!';
-    signupModalContent.innerHTML =`
-    Name: ${signupName.value} 
-    Last name: ${signupSurname.value} 
-    ID number: ${signupIDNumber.value} 
-    Birth: ${signupBirth.value} 
-    Phone: ${signupPhone.value} 
-    Address: ${signupAddress.value} 
-    City: ${signupCity.value} 
-    Zip code: ${signupZip.value} 
-    Email: ${signupEmail.value}`;
+  function signupCreateButtonModal() {
+    validateName(signupName);
+    validateSurname(signupSurname);
+    validateIDNumber(signupIDNumber);
+    validateBirth(signupBirth);
+    validatePhone(signupPhone);
+    validateAddress(signupAddress);
+    validateCity(signupCity);
+    validateZipCode(signupZip);
+    validateEmail(signupEmail);
+    validatePassword(signupPassword);
+    validateRepeatedPassword(signupRepeatedPassword);
+    
+    signupModalTitle.innerHTML = inlineAlerts.length > 0 ? 'ERROR': 'Signup successful!';
 
+    for (var x = signupModalListItems.length ; x > 0 ; x--) {
+      signupModalContent.removeChild(signupModalContent.lastChild);
+    }
+    
+    if (inlineAlerts.length > 0) {  
+      for ( var x = 0 ; x < inlineAlerts.length ; x++) {
+        var listItem = document.createElement('p');
+        listItem.classList.add('modal-list-item');
+        listItem.innerHTML = `${x+1}: ${inlineAlerts[x].innerHTML}`
+        signupModalContent.insertAdjacentElement('beforeend', listItem);
+      }
+    } else {
+      for (var x = 0 ; x < inputValues.length ; x++) {
+        var listItem = document.createElement('p');
+        listItem.classList.add('modal-list-item');
+        listItem.innerHTML = `${inputLabels[x]}${inputValues[x]}`
+        signupModalContent.insertAdjacentElement('beforeend', listItem);
+      }
+      
+      /* signupModalContent.innerHTML =`
+      Name: ${signupName.value} 
+      Last name: ${signupSurname.value} 
+      ID number: ${signupIDNumber.value} 
+      Birth: ${signupBirth.value} 
+      Phone: ${signupPhone.value} 
+      Address: ${signupAddress.value} 
+      City: ${signupCity.value} 
+      Zip code: ${signupZip.value} 
+      Email: ${signupEmail.value}`; */
+    }
+    signupModal.classList.toggle('show-modal');
   }
 
 };
-
+  
 
 /*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/
 
@@ -399,6 +460,7 @@ function isFullAge(date) {
 
   return new Date(thisMoment - date).getFullYear() - 1970 >= 18;
 }
+
 
 /* 
 NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/YEAR/CENTURY):
