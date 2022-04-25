@@ -49,3 +49,55 @@ img {
 	border-radius: 4px;
 	color: #ff0000;
 }
+
+/* MODAL STYLES  */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.modal-container {
+  margin: 100px auto;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+  background-color: #ff5500;
+  padding: 16px;
+  color: #fff;
+}
+
+#modal-title {
+  font-size: 30px;
+}
+
+.close {
+  position: relative;
+  font-size: 30px;
+}
+
+.modal-content {
+  padding: 40px;
+}
+
+.modal-list-item {
+  font-size: 20px;
+}
+
+.show-modal {
+  display: block;
+}
