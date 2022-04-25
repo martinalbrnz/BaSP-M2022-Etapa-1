@@ -350,6 +350,7 @@ window.onload = function () {
 };
 
 /*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/
+// i could have this functions on other file and import the functions i need
 
 function hasNumbers(myString) {
   // the array numbers contain all the numbers
