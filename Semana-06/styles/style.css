@@ -45,7 +45,8 @@ img {
 }
 
 .inline-alerts {
-	height: 20px;
+  min-width: 30%;
+	height: 15px;
 	border-radius: 4px;
 	color: #ff0000;
 }

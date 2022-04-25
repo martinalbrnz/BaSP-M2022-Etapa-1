@@ -141,6 +141,27 @@ window.onload = function() {
     contactModal.classList.toggle("show-modal");
   }
 
+  // RESET BUTTON 
+
+  var contactResetButton = document.getElementsByClassName("contact-form-reset")[0];
+  contactResetButton.addEventListener('click', contactResetFields);
+
+  function contactResetFields() {
+    // Delete inline alerts
+    contactNameInlineAlert.remove();
+    contactEmailInlineAlert.remove();
+    contactAreaInlineAlert.remove();
+    contactMessageInlineAlert.remove();
+
+    // reset field values to default
+    contactName.value = '';
+    contactArea.value = 'Select area';
+    contactEmail.value = '';
+    contactMessage.value = '';
+  }
+
+
+
 }
 
 /*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/
