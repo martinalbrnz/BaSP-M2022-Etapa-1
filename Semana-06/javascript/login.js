@@ -4,8 +4,8 @@ window.onload = function () {
   var inputLabels  = ['Email', 'Password', 'Remember password'];
   // EMAIL VALIDATION
   var loginEmail = document.getElementById('login-email');
-  loginEmail.addEventListener('blur', validateEmail);
-  loginEmail.addEventListener('focus', quitEmailAlerts);
+  loginEmail.onblur = validateEmail;
+  loginEmail.onfocus = quitEmailAlerts;
   var emailInlineAlert = document.createElement('p');
   emailInlineAlert.classList.add('inline-alerts');
 
@@ -15,9 +15,11 @@ window.onload = function () {
     if (loginEmail.value == '') {
       emailInlineAlert.textContent = 'Email is required';
       loginEmail.insertAdjacentElement('afterend', emailInlineAlert);
+      inputValues[0] = 'Error! '.concat(emailInlineAlert.textContent);
     } else if (!emailRegExp.test(loginEmail.value)) {
       emailInlineAlert.textContent = 'Email is not valid';
       loginEmail.insertAdjacentElement('afterend', emailInlineAlert);
+      inputValues[0] = 'Error! '.concat(emailInlineAlert.textContent);
     } else {
       inputValues[0] = loginEmail.value;
     }
@@ -30,8 +32,8 @@ window.onload = function () {
   // PASSWORD VALIDATION
 
   var loginPassword = document.getElementById('login-pass');
-  loginPassword.addEventListener('blur', validatePassword);
-  loginPassword.addEventListener('focus', quitPasswordAlerts);
+  loginPassword.onblur = validatePassword;
+  loginPassword.onfocus = quitPasswordAlerts;
   var passwordInlineAlert = document.createElement('p');
   passwordInlineAlert.classList.add('inline-alerts');
 
@@ -39,10 +41,12 @@ window.onload = function () {
     if (loginPassword.value.length == 0) {
       passwordInlineAlert.textContent = 'Password is required';
       loginPassword.insertAdjacentElement('afterend', passwordInlineAlert);
+      inputValues[1] = 'Error! '.concat(passwordInlineAlert.textContent);
     } else if (loginPassword.value.length < 8) {
       passwordInlineAlert.textContent =
         'Password must have at least 8 characters';
       loginPassword.insertAdjacentElement('afterend', passwordInlineAlert);
+      inputValues[1] = 'Error! '.concat(passwordInlineAlert.textContent);
     } else {
       inputValues[1] = loginPassword.value;
     }
@@ -79,22 +83,32 @@ window.onload = function () {
       loginModalContent.removeChild(loginModalContent.lastChild);
     }
 
-    if (inlineAlerts.length > 0) {
-      for (var x = 0; x < inlineAlerts.length; x++) {
-        var listItem = document.createElement("p");
-        listItem.classList.add("modal-list-item");
-        listItem.innerHTML = ''.concat(x + 1, ': ', inlineAlerts[x].innerHTML);
-        loginModalContent.insertAdjacentElement("beforeend", listItem);
+    for (var x = 0; x < inputValues.length; x++) {
+      var listItem = document.createElement("p");
+      listItem.classList.add("modal-list-item");
+
+      if (x < 2 && inputValues[x].slice(0,5) == 'Error') {
+        listItem.classList.add('error-text');
       }
-    } else {
-      for (var x = 0; x < inputValues.length; x++) {
-        var listItem = document.createElement("p");
-        listItem.classList.add("modal-list-item");
-        listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
-        loginModalContent.insertAdjacentElement("beforeend", listItem);
+      else if (typeof(inputValues[x]) != 'boolean') {
+        listItem.classList.add('correct-text');
       }
+      
+      listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
+      loginModalContent.insertAdjacentElement("beforeend", listItem);
     }
     
     loginModal.classList.toggle('show-modal');
   };
 };
+
+/* 
+NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/YEAR/CENTURY):
+- ELEMENTS ARE ORDERED BY APPEARANCE IN THE HTML FILE.
+- FUNCTIONS TO VALIDATE ARE AT THE END, JUST BEFORE THIS, PLEASE MANTAIN THE ORDER.
+- EACH ELEMENT MUST HAVE THE SELECTOR, THE BLUR AND FOCUS EVENTS AND THEN AN ELEMENT FOR THE OBSERVATIONS.
+- THIS IS NOT PYTHON, BE CAREFUL WITH & AND &&
+- IN SOME CASES, YOU MIGHT BE WONDERING, WHY DON'T YOU USE REGEX? WELL... I'M NOT ALLOWED.
+- SAME APPLIES FOR EVERYTHING THAT CAN BE DONE WITH ES6 OR NEWER.
+- HAVE FUN!
+*/

@@ -51,6 +51,16 @@ img {
 	color: #ff0000;
 }
 
+.error-text::after {
+  content: ' ×';
+  color: #ff0000;
+}
+
+.correct-text::after {
+  content: ' OK';
+  color: #008800;
+}
+
 /* MODAL STYLES  */
 
 .modal {
