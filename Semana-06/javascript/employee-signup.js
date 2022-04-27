@@ -22,8 +22,8 @@ window.onload = function () {
       signupNameInlineAlert.textContent = "Name must have at least 3 characters";
       signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
-    } else if (hasNumbers(signupName.value)) {
-      signupNameInlineAlert.textContent = "Name can't contain a number";
+    } else if (!isCharsOrSpace(signupName.value)) {
+      signupNameInlineAlert.textContent = "Name only can contain letters";
       signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
     } else {
@@ -51,8 +51,8 @@ window.onload = function () {
       signupSurnameInlineAlert.textContent = "Last name must have at least 3 characters";
       signupLastName.insertAdjacentElement("afterend", signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
-    } else if (hasNumbers(signupLastName.value)) {
-      signupSurnameInlineAlert.textContent = "Last name can't contain a number";
+    } else if (!isCharsOrSpace(signupLastName.value)) {
+      signupSurnameInlineAlert.textContent = "Last name only can contain letters";
       signupLastName.insertAdjacentElement("afterend", signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
     } else {
@@ -76,15 +76,19 @@ window.onload = function () {
       signupIDNumberInlineAlert.textContent = "ID Number is a required field";
       signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
-    } else if (signupIDNumber.value.length < 8) {
+    } 
+    else if (signupIDNumber.value.length < 8) {
       signupIDNumberInlineAlert.textContent =
-        "ID Number must have at least 8 characters";
-        inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
-    } else if (!isOnlyNumbers(signupIDNumber.value)) {
-      signupIDNumberInlineAlert.textContent =
-        "ID Number can contain only numbers";
-        inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
-    } else {
+      "ID Number must have at least 8 characters";
+      signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
+      inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
+    } 
+    else if (!(isOnlyNumbers(signupIDNumber.value))) {
+      signupIDNumberInlineAlert.textContent = "ID Number can contain only numbers";
+      signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
+      inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
+    } 
+    else {
       inputValues[2] = signupIDNumber.value;
     }
   }
@@ -287,7 +291,7 @@ window.onload = function () {
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else if (!hasNumbersAndChar(signupPassword.value)) {
       signupPasswordInlineAlert.textContent =
-        "Password must contain numbers and letters";
+        "Password must contain only numbers and letters";
       signupPassword.insertAdjacentElement("afterend", signupPasswordInlineAlert);
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else {
@@ -395,26 +399,55 @@ function hasNumbers(myString) {
 }
 
 // string -> boolean
+// has only letters => true
+// has numbers and letters => false
+// has spaces numbers and letters => false
+function isChars(myString) {
+  for (var x = 0 ; x < myString.length; x++) {
+    if (!((myString[x] >= 'a' && myString[x] <= 'z') || (myString[x] >= 'A' && myString[x] <= 'Z'))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// string -> boolean
+// has only letters => true
+// has letters and/or spaces => true
+// has numbers and letters => false
+// has spaces numbers and letters => false
+function isCharsOrSpace(myString) {
+  for (var x = 0 ; x < myString.length; x++) {
+    if (!((myString[x] >= 'a' && myString[x] <= 'z') 
+    || (myString[x] >= 'A' && myString[x] <= 'Z' 
+    || myString[x] == ' '))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// string -> boolean
 // has numbers and letters => true
 // has numbers but no letters => false
 // has letter but no numbers => false
 function hasNumbersAndChar(myString) {
-  var num = 0;
-  var char = 0;
+  var num = false;
+  var char = false;
 
   // if the character is a number, i sum one to numbers. Else, i sum to char
   // if both are more than zero, there are numbers and chars! So the function return true.
   for (var x = 0; x < myString.length; x++) {
     if (hasNumbers(myString[x])) {
-      num++;
+      num = true;
+    } else if (isChars(myString[x])) {
+      char = true;
     } else {
-      char++;
-    }
-    if (num > 0 && char > 0) {
-      return true;
+      return false;
     }
   }
-  return false;
+
+  return num && char;
 }
 
 // string -> boolean
@@ -422,7 +455,6 @@ function hasNumbersAndChar(myString) {
 // numbers and letters => false
 // only letters => false
 function isOnlyNumbers(myString) {
-  // if it is not a number, this returns false
   for (var x = 0; x < myString.length; x++) {
     if (!hasNumbers(myString[x])) {
       return false;
@@ -472,6 +504,9 @@ function addressValidator(myString) {
 }
 
 // everything must be transformed in a Date prototype so everything can be instantiated
+// date -> bool
+// date - today < 18 => false
+// date - today >= 18 => true
 function isFullAge(date) {  
   var inputDate = new Date(date);
   var thisMoment = new Date(Date.now());

@@ -1,3 +1,5 @@
+// WIP
+
 window.onload = function() {
   // AUX VARIABLES
   var inputValues = [];
@@ -5,8 +7,8 @@ window.onload = function() {
 
   // CONTACT NAME 
   var contactName = document.getElementById('contact-name');
-  contactName.addEventListener('blur', validateName);
-  contactName.addEventListener('focus', quitContactNameAlerts);
+  contactName.onblur = validateName;
+  contactName.onfocus = quitContactNameAlerts;
   var contactNameInlineAlert = document.createElement('p');
   contactNameInlineAlert.classList.add('inline-alerts');
 
@@ -31,8 +33,8 @@ window.onload = function() {
 
   // CONTACT EMAIL
   var contactEmail = document.getElementById('contact-email');
-  contactEmail.addEventListener('blur', validateEmail);
-  contactEmail.addEventListener('focus', quitContactEmailAlerts);
+  contactEmail.onblur = validateEmail;
+  contactEmail.onfocus = quitContactEmailAlerts;
   var contactEmailInlineAlert = document.createElement('p');
   contactEmailInlineAlert.classList.add('inline-alerts');
 
@@ -56,8 +58,8 @@ window.onload = function() {
 
   // CONTACT AREA 
   var contactArea = document.getElementById('contact-area');
-  contactArea.addEventListener('blur', validateArea);
-  contactArea.addEventListener('focus', quitContactAreaAlerts);
+  contactArea.onblur = validateArea;
+  contactArea.onfocus = quitContactAreaAlerts;
   var contactAreaInlineAlert = document.createElement('p');
   contactAreaInlineAlert.classList.add('inline-alerts');
 
@@ -78,8 +80,8 @@ window.onload = function() {
 
   // CONTACT MESSAGE 
   var contactMessage = document.getElementById('contact-message');
-  contactMessage.addEventListener('blur', validateMessage);
-  contactMessage.addEventListener('focus', quitContactMessageAlerts);
+  contactMessage.onblur = validateMessage;
+  contactMessage.onfocus = quitContactMessageAlerts;
   var contactMessageInlineAlert = document.createElement('p');
   contactMessageInlineAlert.classList.add('inline-alerts');
   
@@ -108,8 +110,8 @@ window.onload = function() {
   var inlineAlerts = document.getElementsByClassName("inline-alerts");
   var contactModalListItems = document.getElementsByClassName("modal-list-item");
 
-  contactCreateButton.addEventListener("click", contactCreateButtonModal);
-  contactModalCloseButton.addEventListener("click", contactCreateButtonModal);
+  contactCreateButton.onclick = contactCreateButtonModal;
+  contactModalCloseButton.onclick = contactCreateButtonModal;
 
   function contactCreateButtonModal() {
     validateName(contactName);
@@ -144,7 +146,7 @@ window.onload = function() {
   // RESET BUTTON 
 
   var contactResetButton = document.getElementsByClassName("contact-form-reset")[0];
-  contactResetButton.addEventListener('click', contactResetFields);
+  contactResetButton.onclick = contactResetFields;
 
   function contactResetFields() {
     // Delete inline alerts
