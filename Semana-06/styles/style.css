@@ -52,7 +52,7 @@ img {
 }
 
 .error-text::after {
-  content: ' ×';
+  content: ' x';
   color: #ff0000;
 }
 

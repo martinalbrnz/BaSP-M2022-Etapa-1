@@ -75,7 +75,7 @@ window.onload = function () {
     validateEmail(loginEmail);
     validatePassword(loginPassword);
     
-    loginModalTitle.innerHTML = inlineAlerts.length > 0 ? "ERROR" : "Login successful!";
+    loginModalTitle.innerHTML = inlineAlerts.length > 0 ? 'ERROR' : 'Login successful!';
 
     inputValues[2] = loginRememberMe.checked;
 
@@ -84,10 +84,10 @@ window.onload = function () {
     }
 
     for (var x = 0; x < inputValues.length; x++) {
-      var listItem = document.createElement("p");
-      listItem.classList.add("modal-list-item");
+      var listItem = document.createElement('p');
+      listItem.classList.add('modal-list-item');
 
-      if (x < 2 && inputValues[x].slice(0,5) == 'Error') {
+      if (typeof(inputValues[x]) != 'boolean' && inputValues[x].slice(0,5) == 'Error') {
         listItem.classList.add('error-text');
       }
       else if (typeof(inputValues[x]) != 'boolean') {
@@ -95,7 +95,7 @@ window.onload = function () {
       }
       
       listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
-      loginModalContent.insertAdjacentElement("beforeend", listItem);
+      loginModalContent.insertAdjacentElement('beforeend', listItem);
     }
     
     loginModal.classList.toggle('show-modal');

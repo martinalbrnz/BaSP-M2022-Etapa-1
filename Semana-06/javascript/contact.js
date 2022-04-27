@@ -1,5 +1,3 @@
-// WIP
-
 window.onload = function() {
   // AUX VARIABLES
   var inputValues = [];
@@ -16,12 +14,15 @@ window.onload = function() {
     if (contactName.value == '') {
       contactNameInlineAlert.textContent = 'Name is a required field';
       contactName.insertAdjacentElement('afterend', contactNameInlineAlert);
+      inputValues[0] = 'Error! '.concat(contactNameInlineAlert.textContent);
     } else if (contactName.value.length < 3) {
       contactNameInlineAlert.textContent = 'Name must have at least 3 characters';
       contactName.insertAdjacentElement('afterend', contactNameInlineAlert);
+      inputValues[0] = 'Error! '.concat(contactNameInlineAlert.textContent);
     } else if (hasNumbers(contactName.value)) {
       contactNameInlineAlert.textContent = 'Name can\'t contain a number';
       contactName.insertAdjacentElement('afterend', contactNameInlineAlert);
+      inputValues[0] = 'Error! '.concat(contactNameInlineAlert.textContent);
     } else {
       inputValues[0] = contactName.value;
     }
@@ -44,9 +45,11 @@ window.onload = function() {
     if (contactEmail.value == '') {
       contactEmailInlineAlert.textContent = 'Email is required';
       contactEmail.insertAdjacentElement('afterend', contactEmailInlineAlert);
+      inputValues[1] = 'Error! '.concat(contactEmailInlineAlert.textContent);
     } else if (!emailRegExp.test(contactEmail.value)) {
       contactEmailInlineAlert.textContent = 'Email is not valid';
       contactEmail.insertAdjacentElement('afterend', contactEmailInlineAlert);
+      inputValues[1] = 'Error! '.concat(contactEmailInlineAlert.textContent);
     } else {
       inputValues[1] = contactEmail.value;
     }
@@ -69,6 +72,7 @@ window.onload = function() {
     if (!possibleAreas.includes(contactArea.value)){
       contactAreaInlineAlert.textContent = 'Area is not valid';
       contactArea.insertAdjacentElement('afterend', contactAreaInlineAlert);
+      inputValues[2] = 'Error! '.concat(contactAreaInlineAlert.textContent);
     } else {
       inputValues[2] = contactArea.value;
     }
@@ -89,9 +93,11 @@ window.onload = function() {
     if (contactMessage.value == '') {
       contactMessageInlineAlert.textContent = 'Message is a required field';
       contactMessage.insertAdjacentElement('afterend', contactMessageInlineAlert);
+      inputValues[3] = 'Error! '.concat(contactMessageInlineAlert.textContent);
     } else if (contactMessage.value.length < 3) {
       contactMessageInlineAlert.textContent = 'Message must have at least 3 characters';
       contactMessage.insertAdjacentElement('afterend', contactMessageInlineAlert);
+      inputValues[3] = 'Error! '.concat(contactMessageInlineAlert.textContent);
     } else {
       inputValues[3] = contactMessage.value;
     }
@@ -120,26 +126,27 @@ window.onload = function() {
     validateMessage(contactMessage);
 
     contactModalTitle.innerHTML = inlineAlerts.length > 0 ? "ERROR" : "Message sent!";
-
+    
     for (var x = contactModalListItems.length; x > 0; x--) {
       contactModalContent.removeChild(contactModalContent.lastChild);
     }
 
-    if (inlineAlerts.length > 0) {
-      for (var x = 0; x < inlineAlerts.length; x++) {
-        var listItem = document.createElement("p");
-        listItem.classList.add("modal-list-item");
-        listItem.innerHTML = ''.concat(x + 1, ': ', inlineAlerts[x].innerHTML);
-        contactModalContent.insertAdjacentElement("beforeend", listItem);
+    for (var x = 0; x < inputValues.length; x++) {
+      var listItem = document.createElement('p');
+      listItem.classList.add('modal-list-item');
+
+      if (inputValues[x].slice(0,5) == 'Error') {
+        listItem.classList.add('error-text');
       }
-    } else {
-      for (var x = 0; x < inputValues.length; x++) {
-        var listItem = document.createElement("p");
-        listItem.classList.add("modal-list-item");
-        listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
-        contactModalContent.insertAdjacentElement("beforeend", listItem);
+      else {
+        listItem.classList.add('correct-text');
       }
+      
+      listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
+      contactModalContent.insertAdjacentElement('beforeend', listItem);
     }
+
+
     contactModal.classList.toggle("show-modal");
   }
 

@@ -3,28 +3,28 @@
 window.onload = function () {
   // AUX VARIABLES
   var inputValues = [];
-  var inputLabels = ["Name", "Last name", "ID number", "Birth date", "Phone", "Address", "City", "Zip code", 
-  "Email", "Password", "Repeated password"];
+  var inputLabels = ['Name', 'Last name', 'ID number', 'Birth date', 'Phone', 'Address', 'City', 'Zip code', 
+  'Email', 'Password', 'Repeated password'];
 
   // NAME
-  var signupName = document.getElementById("signup-name");
+  var signupName = document.getElementById('signup-name');
   signupName.onblur = validateName;
   signupName.onfocus = quitSignupNameAlerts;
-  var signupNameInlineAlert = document.createElement("p");
-  signupNameInlineAlert.classList.add("inline-alerts");
+  var signupNameInlineAlert = document.createElement('p');
+  signupNameInlineAlert.classList.add('inline-alerts');
 
   function validateName() {
-    if (signupName.value.trim() == "") {
-      signupNameInlineAlert.textContent = "Name is a required field";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+    if (signupName.value.trim() == '') {
+      signupNameInlineAlert.textContent = 'Name is a required field';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
     } else if (signupName.value.trim().length < 3) {
-      signupNameInlineAlert.textContent = "Name must have at least 3 characters";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+      signupNameInlineAlert.textContent = 'Name must have at least 3 characters';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
     } else if (!isCharsOrSpace(signupName.value)) {
-      signupNameInlineAlert.textContent = "Name only can contain letters";
-      signupName.insertAdjacentElement("afterend", signupNameInlineAlert);
+      signupNameInlineAlert.textContent = 'Name only can contain letters';
+      signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
     } else {
       inputValues[0] = signupName.value.trim();
@@ -36,24 +36,24 @@ window.onload = function () {
   }
 
   // LAST NAME
-  var signupLastName = document.getElementById("signup-last-name");
+  var signupLastName = document.getElementById('signup-last-name');
   signupLastName.onblur = validateSurname;
   signupLastName.onfocus = quitSignupSurnameAlerts;
-  var signupSurnameInlineAlert = document.createElement("p");
-  signupSurnameInlineAlert.classList.add("inline-alerts");
+  var signupSurnameInlineAlert = document.createElement('p');
+  signupSurnameInlineAlert.classList.add('inline-alerts');
 
   function validateSurname() {
-    if (signupLastName.value.trim() == "") {
-      signupSurnameInlineAlert.textContent = "Last name is a required field";
-      signupLastName.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+    if (signupLastName.value.trim() == '') {
+      signupSurnameInlineAlert.textContent = 'Last name is a required field';
+      signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
     } else if (signupLastName.value.trim().length < 3) {
-      signupSurnameInlineAlert.textContent = "Last name must have at least 3 characters";
-      signupLastName.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+      signupSurnameInlineAlert.textContent = 'Last name must have at least 3 characters';
+      signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
     } else if (!isCharsOrSpace(signupLastName.value)) {
-      signupSurnameInlineAlert.textContent = "Last name only can contain letters";
-      signupLastName.insertAdjacentElement("afterend", signupSurnameInlineAlert);
+      signupSurnameInlineAlert.textContent = 'Last name only can contain letters';
+      signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
     } else {
       inputValues[1] = signupLastName.value.trim();
@@ -65,27 +65,27 @@ window.onload = function () {
   }
 
   // ID NUMBER
-  var signupIDNumber = document.getElementById("signup-idn");
+  var signupIDNumber = document.getElementById('signup-idn');
   signupIDNumber.onblur = validateIDNumber;
   signupIDNumber.onfocus = quitSignupIDNumberAlerts;
-  var signupIDNumberInlineAlert = document.createElement("p");
-  signupIDNumberInlineAlert.classList.add("inline-alerts");
+  var signupIDNumberInlineAlert = document.createElement('p');
+  signupIDNumberInlineAlert.classList.add('inline-alerts');
 
   function validateIDNumber() {
-    if (signupIDNumber.value == "") {
-      signupIDNumberInlineAlert.textContent = "ID Number is a required field";
-      signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
+    if (signupIDNumber.value == '') {
+      signupIDNumberInlineAlert.textContent = 'ID Number is a required field';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
     } 
     else if (signupIDNumber.value.length < 8) {
       signupIDNumberInlineAlert.textContent =
-      "ID Number must have at least 8 characters";
-      signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
+      'ID Number must have at least 8 characters';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
     } 
     else if (!(isOnlyNumbers(signupIDNumber.value))) {
-      signupIDNumberInlineAlert.textContent = "ID Number can contain only numbers";
-      signupIDNumber.insertAdjacentElement("afterend", signupIDNumberInlineAlert);
+      signupIDNumberInlineAlert.textContent = 'ID Number can contain only numbers';
+      signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
     } 
     else {
@@ -98,20 +98,20 @@ window.onload = function () {
   }
 
   // BIRTH
-  var signupBirth = document.getElementById("signup-birth-date");
+  var signupBirth = document.getElementById('signup-birth-date');
   signupBirth.onblur = validateBirth;
   signupBirth.onfocus = quitSignupBirthAlerts;
-  var signupBirthInlineAlert = document.createElement("p");
-  signupBirthInlineAlert.classList.add("inline-alerts");
+  var signupBirthInlineAlert = document.createElement('p');
+  signupBirthInlineAlert.classList.add('inline-alerts');
 
   function validateBirth() {
-    if (signupBirth.value == "") {
-      signupBirthInlineAlert.textContent = "Birth date is a required field";
-      signupBirth.insertAdjacentElement("afterend", signupBirthInlineAlert);
+    if (signupBirth.value == '') {
+      signupBirthInlineAlert.textContent = 'Birth date is a required field';
+      signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
       inputValues[3] = 'Error! '.concat(signupBirthInlineAlert.textContent);
     } else if (!isFullAge(signupBirth.value)) {
-      signupBirthInlineAlert.textContent = "You must be +18";
-      signupBirth.insertAdjacentElement("afterend", signupBirthInlineAlert);
+      signupBirthInlineAlert.textContent = 'You must be +18';
+      signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
       inputValues[3] = 'Error! '.concat(signupBirthInlineAlert.textContent);
     } else {
       inputValues[3] = signupBirth.value;
@@ -123,28 +123,28 @@ window.onload = function () {
   }
 
   // PHONE
-  var signupPhone = document.getElementById("signup-phone");
+  var signupPhone = document.getElementById('signup-phone');
   signupPhone.onblur = validatePhone;
   signupPhone.onfocus = quitSignupPhoneAlerts;
-  var signupPhoneInlineAlert = document.createElement("p");
-  signupPhoneInlineAlert.classList.add("inline-alerts");
+  var signupPhoneInlineAlert = document.createElement('p');
+  signupPhoneInlineAlert.classList.add('inline-alerts');
 
   function validatePhone() {
-    if (signupPhone.value == "") {
-      signupPhoneInlineAlert.textContent = "Phone is a required field";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+    if (signupPhone.value == '') {
+      signupPhoneInlineAlert.textContent = 'Phone is a required field';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
       inputValues[4] = 'Error! '.concat(signupPhoneInlineAlert.textContent);
     } else if ((signupPhone.value.length != 10) && !isOnlyNumbers(signupPhone.value)) {
-      signupPhoneInlineAlert.textContent = "Phone number must have 10 numeric characters";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+      signupPhoneInlineAlert.textContent = 'Phone number must have 10 numeric characters';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
       inputValues[4] = 'Error! '.concat(signupPhoneInlineAlert.textContent);
     } else if (signupPhone.value.length != 10) {
-      signupPhoneInlineAlert.textContent = "Phone number must have 10 numeric characters";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+      signupPhoneInlineAlert.textContent = 'Phone number must have 10 numeric characters';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
       inputValues[4] = 'Error! '.concat(signupPhoneInlineAlert.textContent);
     } else if (!isOnlyNumbers(signupPhone.value)) {
-      signupPhoneInlineAlert.textContent = "Phone number can contain only numbers";
-      signupPhone.insertAdjacentElement("afterend", signupPhoneInlineAlert);
+      signupPhoneInlineAlert.textContent = 'Phone number can contain only numbers';
+      signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
       inputValues[4] = 'Error! '.concat(signupPhoneInlineAlert.textContent);
     } else {
       inputValues[4] = signupPhone.value;
@@ -156,24 +156,24 @@ window.onload = function () {
   }
 
   // ADDRESS
-  var signupAddress = document.getElementById("signup-address");
+  var signupAddress = document.getElementById('signup-address');
   signupAddress.onblur = validateAddress;
   signupAddress.onfocus = quitSignupAddressAlerts;
-  var signupAddressInlineAlert = document.createElement("p");
-  signupAddressInlineAlert.classList.add("inline-alerts");
+  var signupAddressInlineAlert = document.createElement('p');
+  signupAddressInlineAlert.classList.add('inline-alerts');
 
   function validateAddress() {
-    if (signupAddress.value.trim() == "") {
-      signupAddressInlineAlert.textContent = "Address is a required field";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+    if (signupAddress.value.trim() == '') {
+      signupAddressInlineAlert.textContent = 'Address is a required field';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
       inputValues[5] = 'Error! '.concat(signupAddressInlineAlert.textContent);
     } else if (signupAddress.value.trim().length < 5) {
-      signupAddressInlineAlert.textContent = "Address must have at least 5 characters";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+      signupAddressInlineAlert.textContent = 'Address must have at least 5 characters';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
       inputValues[5] = 'Error! '.concat(signupAddressInlineAlert.textContent);
     } else if (!addressValidator(signupAddress.value)) {
-      signupAddressInlineAlert.textContent = "Address must contain letters, numbers and a space between";
-      signupAddress.insertAdjacentElement("afterend", signupAddressInlineAlert);
+      signupAddressInlineAlert.textContent = 'Address must contain letters, numbers and a space between';
+      signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
       inputValues[5] = 'Error! '.concat(signupAddressInlineAlert.textContent);
     } else {
       inputValues[5] = signupAddress.value;
@@ -185,20 +185,20 @@ window.onload = function () {
   }
 
   // CITY
-  var signupCity = document.getElementById("signup-city");
+  var signupCity = document.getElementById('signup-city');
   signupCity.onblur = validateCity;
   signupCity.onfocus = quitSignupCityAlerts;
-  var signupCityInlineAlert = document.createElement("p");
-  signupCityInlineAlert.classList.add("inline-alerts");
+  var signupCityInlineAlert = document.createElement('p');
+  signupCityInlineAlert.classList.add('inline-alerts');
 
   function validateCity() {
-    if (signupCity.value.trim() == "") {
-      signupCityInlineAlert.textContent = "City name is a required field";
-      signupCity.insertAdjacentElement("afterend", signupCityInlineAlert);
+    if (signupCity.value.trim() == '') {
+      signupCityInlineAlert.textContent = 'City name is a required field';
+      signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
       inputValues[6] = 'Error! '.concat(signupCityInlineAlert.textContent);
     } else if (signupCity.value.trim().length < 3) {
-      signupCityInlineAlert.textContent = "City name must have at least 3 characters";
-      signupCity.insertAdjacentElement("afterend", signupCityInlineAlert);
+      signupCityInlineAlert.textContent = 'City name must have at least 3 characters';
+      signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
       inputValues[6] = 'Error! '.concat(signupCityInlineAlert.textContent);
     } else {
       inputValues[6] = signupCity.value;
@@ -210,26 +210,26 @@ window.onload = function () {
   }
 
   // ZIP CODE
-  var signupZip = document.getElementById("signup-zip-code");
+  var signupZip = document.getElementById('signup-zip-code');
   signupZip.onblur = validateZipCode;
   signupZip.onfocus = quitSignupZipAlerts;
-  var signupZipInlineAlert = document.createElement("p");
-  signupZipInlineAlert.classList.add("inline-alerts");
+  var signupZipInlineAlert = document.createElement('p');
+  signupZipInlineAlert.classList.add('inline-alerts');
 
   function validateZipCode() {
-    if (signupZip.value == "") {
-      signupZipInlineAlert.textContent = "ZIP Code is a required field";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+    if (signupZip.value == '') {
+      signupZipInlineAlert.textContent = 'ZIP Code is a required field';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
       inputValues[7] = 'Error! '.concat(signupZipInlineAlert.textContent);
     } else if (
       !((signupZip.value.length <= 5) && (signupZip.value.length >= 4))
     ) {
-      signupZipInlineAlert.textContent = "ZIP code must have 4 o 5 characters";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+      signupZipInlineAlert.textContent = 'ZIP code must have 4 o 5 characters';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
       inputValues[7] = 'Error! '.concat(signupZipInlineAlert.textContent);
     } else if (!isOnlyNumbers(signupZip.value)) {
-      signupZipInlineAlert.textContent = "ZIP code can contain only numbers";
-      signupZip.insertAdjacentElement("afterend", signupZipInlineAlert);
+      signupZipInlineAlert.textContent = 'ZIP code can contain only numbers';
+      signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
       inputValues[7] = 'Error! '.concat(signupZipInlineAlert.textContent);
     } else {
       inputValues[7] = signupZip.value;
@@ -241,22 +241,22 @@ window.onload = function () {
   }
 
   // EMAIL
-  var signupEmail = document.getElementById("signup-email");
+  var signupEmail = document.getElementById('signup-email');
   signupEmail.onblur = validateEmail;
   signupEmail.onfocus = quitSignupEmailAlerts;
-  var signupEmailInlineAlert = document.createElement("p");
-  signupEmailInlineAlert.classList.add("inline-alerts");
+  var signupEmailInlineAlert = document.createElement('p');
+  signupEmailInlineAlert.classList.add('inline-alerts');
 
   function validateEmail() {
     var emailRegExp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
-    if (signupEmail.value.trim() == "") {
-      signupEmailInlineAlert.textContent = "Email is required";
-      signupEmail.insertAdjacentElement("afterend", signupEmailInlineAlert);
+    if (signupEmail.value.trim() == '') {
+      signupEmailInlineAlert.textContent = 'Email is required';
+      signupEmail.insertAdjacentElement('afterend', signupEmailInlineAlert);
       inputValues[8] = 'Error! '.concat(signupEmailInlineAlert.textContent);
     } else if (!emailRegExp.test(signupEmail.value)) {
-      signupEmailInlineAlert.textContent = "Email is not valid";
-      signupEmail.insertAdjacentElement("afterend", signupEmailInlineAlert);
+      signupEmailInlineAlert.textContent = 'Email is not valid';
+      signupEmail.insertAdjacentElement('afterend', signupEmailInlineAlert);
       inputValues[8] = 'Error! '.concat(signupEmailInlineAlert.textContent);
     } else {
       inputValues[8] = signupEmail.value;
@@ -268,31 +268,31 @@ window.onload = function () {
   }
 
   // PASSWORD
-  var signupPassword = document.getElementById("signup-pass");
+  var signupPassword = document.getElementById('signup-pass');
   signupPassword.onblur = validatePassword;
   signupPassword.onfocus = quitSignupPasswordAlerts;
-  var signupPasswordInlineAlert = document.createElement("p");
-  signupPasswordInlineAlert.classList.add("inline-alerts");
+  var signupPasswordInlineAlert = document.createElement('p');
+  signupPasswordInlineAlert.classList.add('inline-alerts');
 
   function validatePassword() {
     if (signupPassword.value.length == 0) {
-      signupPasswordInlineAlert.textContent = "Password is required";
-      signupPassword.insertAdjacentElement("afterend", signupPasswordInlineAlert);
+      signupPasswordInlineAlert.textContent = 'Password is required';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else if ((signupPassword.value.length < 8) && !hasNumbersAndChar(signupPassword.value)) {
       signupPasswordInlineAlert.textContent =
-        "Password must have at least 8 characters including numbers and letters";
-      signupPassword.insertAdjacentElement("afterend", signupPasswordInlineAlert);
+        'Password must have at least 8 characters including numbers and letters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else if (signupPassword.value.length < 8) {
       signupPasswordInlineAlert.textContent =
-        "Password must have at least 8 characters";
-      signupPassword.insertAdjacentElement("afterend", signupPasswordInlineAlert);
+        'Password must have at least 8 characters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else if (!hasNumbersAndChar(signupPassword.value)) {
       signupPasswordInlineAlert.textContent =
-        "Password must contain only numbers and letters";
-      signupPassword.insertAdjacentElement("afterend", signupPasswordInlineAlert);
+        'Password must contain only numbers and letters';
+      signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else {
       inputValues[9] = signupPassword.value;
@@ -304,20 +304,20 @@ window.onload = function () {
   }
 
   // REPEATED PASSWORD
-  var signupRepeatedPassword = document.getElementById("signup-repeated-pass");
+  var signupRepeatedPassword = document.getElementById('signup-repeated-pass');
   signupRepeatedPassword.onblur = validateRepeatedPassword;
   signupRepeatedPassword.onfocus = quitSignupRepeatedPasswordAlerts;
-  var signupRepeatedPasswordInlineAlert = document.createElement("p");
-  signupRepeatedPasswordInlineAlert.classList.add("inline-alerts");
+  var signupRepeatedPasswordInlineAlert = document.createElement('p');
+  signupRepeatedPasswordInlineAlert.classList.add('inline-alerts');
 
   function validateRepeatedPassword() {
     if (signupRepeatedPassword.value.length == 0) {
-      signupRepeatedPasswordInlineAlert.textContent = "You must repeat the password";
-      signupRepeatedPassword.insertAdjacentElement("afterend", signupRepeatedPasswordInlineAlert);
+      signupRepeatedPasswordInlineAlert.textContent = 'You must repeat the password';
+      signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
       inputValues[10] = 'Error! '.concat(signupRepeatedPasswordInlineAlert.textContent);
     } else if (signupRepeatedPassword.value != signupPassword.value) {
-      signupRepeatedPasswordInlineAlert.textContent = "The passwords are not the same";
-      signupRepeatedPassword.insertAdjacentElement("afterend", signupRepeatedPasswordInlineAlert);
+      signupRepeatedPasswordInlineAlert.textContent = 'The passwords are not the same';
+      signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
       inputValues[10] = 'Error! '.concat(signupRepeatedPasswordInlineAlert.textContent);
     } else {
       inputValues[10] = signupRepeatedPassword.value;
@@ -329,13 +329,13 @@ window.onload = function () {
   }
 
   // CREATE BUTTON
-  var signupCreateButton = document.getElementById("signup-create-button");
-  var signupModal = document.getElementById("signup-modal");
-  var signupModalCloseButton = document.getElementsByClassName("close")[0];
-  var signupModalTitle = document.getElementById("modal-title");
-  var signupModalContent = document.getElementsByClassName("modal-content")[0];
-  var inlineAlerts = document.getElementsByClassName("inline-alerts");
-  var signupModalListItems = document.getElementsByClassName("modal-list-item");
+  var signupCreateButton = document.getElementById('signup-create-button');
+  var signupModal = document.getElementById('signup-modal');
+  var signupModalCloseButton = document.getElementsByClassName('close')[0];
+  var signupModalTitle = document.getElementById('modal-title');
+  var signupModalContent = document.getElementsByClassName('modal-content')[0];
+  var inlineAlerts = document.getElementsByClassName('inline-alerts');
+  var signupModalListItems = document.getElementsByClassName('modal-list-item');
 
   signupCreateButton.onclick = signupCreateButtonModal;
   signupModalCloseButton.onclick = signupCreateButtonModal;
@@ -354,15 +354,15 @@ window.onload = function () {
     validateRepeatedPassword(signupRepeatedPassword);
 
     signupModalTitle.innerHTML =
-      inlineAlerts.length > 0 ? "ERROR" : "Sign up successful!";
+      inlineAlerts.length > 0 ? 'ERROR' : 'Sign up successful!';
 
     for (var x = signupModalListItems.length; x > 0; x--) {
       signupModalContent.removeChild(signupModalContent.lastChild);
     }
 
     for (var x = 0; x < inputValues.length; x++) {
-      var listItem = document.createElement("p");
-      listItem.classList.add("modal-list-item");
+      var listItem = document.createElement('p');
+      listItem.classList.add('modal-list-item');
 
       if (inputValues[x].slice(0,5) == 'Error') {
         listItem.classList.add('error-text');
@@ -372,10 +372,10 @@ window.onload = function () {
       }
 
       listItem.innerHTML = ''.concat(inputLabels[x], ': ', inputValues[x]);
-      signupModalContent.insertAdjacentElement("beforeend", listItem);
+      signupModalContent.insertAdjacentElement('beforeend', listItem);
     }
     
-    signupModal.classList.toggle("show-modal");
+    signupModal.classList.toggle('show-modal');
   }
 };
 
@@ -387,7 +387,7 @@ window.onload = function () {
 // has not numbers => false
 function hasNumbers(myString) {
   // the array numbers contain all the numbers
-  var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
   // if the char on index x is included in numbers, it is a number, so return true.
   for (var x = 0; x < myString.length; x++) {
@@ -470,7 +470,7 @@ function isOnlyNumbers(myString) {
 function addressValidator(myString) {
   var trimmedString = myString.trim();
   var spaceTrigger = false;
-  var space = [" "];
+  var space = [' '];
 
   var alphaTrigger = false;
   var num = 0;
