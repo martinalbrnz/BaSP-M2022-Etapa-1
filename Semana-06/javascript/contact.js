@@ -161,9 +161,6 @@ window.onload = function() {
     contactEmail.value = '';
     contactMessage.value = '';
   }
-
-
-
 }
 
 /*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/

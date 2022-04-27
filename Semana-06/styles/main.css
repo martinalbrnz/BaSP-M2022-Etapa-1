@@ -105,12 +105,14 @@ section:not(:last-child) {
   width: 100%;
 }
 
-#contact-form > input {
+#contact-form > .input-container {
+  display: flex;
+  flex-direction: column;
   flex-basis: calc((466px - 32px - 32px) / 2);
   flex-grow: 1;
 }
 
-#contact-form > input, select, textarea {
+#contact-form > .input-container > input, select, textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #555;
