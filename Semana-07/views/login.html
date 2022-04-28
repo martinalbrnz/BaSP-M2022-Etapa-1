@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+		<link rel="stylesheet" href="../styles/reset.css">
+		<link rel="stylesheet" href="../styles/header.css">
+		<link rel="stylesheet" href="../styles/sidebar.css">
+		<link rel="stylesheet" href="../styles/footer.css">
+		<link rel="stylesheet" href="../styles/style.css">
+		<link rel="stylesheet" href="../styles/login.css">
+		<script src="https://kit.fontawesome.com/8bedfba391.js" crossorigin="anonymous"></script>
+		<script src="../javascript/login.js"></script>
+	</head>
+	<body>
+		<header id="header">
+      <i class="fa-solid fa-bars"></i>
+      <h1>Trackgenix S.A.</h1>
+      <ul class="social-media">
+        <li>
+          <a class="fa-brands fa-facebook" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-instagram" href=""#></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-twitter" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-linkedin" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-github" href="#"></a>
+        </li>
+      </ul>
+    </header>
+		<nav id="sidebar">
+      <form action="#">
+        <div class="input-container">
+          <input type="search" name="search" id="sidebar-search" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </form>
+      <p>Menu</p>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="employee-signup.html">Sign up</a>
+        </li>
+        <li>
+          <a href="login.html">Log in</a>
+        </li>
+        <li>
+          <a href="#">Contact info</a>
+        </li>
+      </ul>
+    </nav>
+		<main>
+			<div class="login-container">
+				<h2>Log in</h2>
+				<form action="#" id="login-form">
+					<input type="email" name="login-email" id="login-email" placeholder="Email" class="text-input">
+					<input type="password" name="login-pass" id="login-pass" placeholder="Password" class="text-input">
+					<label for="remember-me">
+						<input type="checkbox" name="remember-me" id="remember-me">
+						Remember me
+					</label>
+					<a href="#">Forgot password?</a>
+					<input type="button" value="Login" class="login-button">
+				</form>
+			</div>
+      <div id="login-modal" class="modal">
+        <div class="modal-container">
+          <div class="modal-header">
+            <p id="modal-title"></p>
+            <i class="fa-solid fa-xmark close"></i>
+          </div>
+          <div class="modal-content">
+          </div>
+        </div>
+      </div>
+		</main>
+		<footer id="footer">
+      <ul class="social-media">
+        <li>
+          <a class="fa-brands fa-facebook" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-instagram" href=""#></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-twitter" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-linkedin" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-github" href="#"></a>
+        </li>
+      </ul>
+      <p>Copyright 2022 Trackgenix. All rights reserved.</p>
+    </footer>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+		<link rel="stylesheet" href="../styles/reset.css">
+		<link rel="stylesheet" href="../styles/header.css">
+		<link rel="stylesheet" href="../styles/sidebar.css">
+		<link rel="stylesheet" href="../styles/footer.css">
+		<link rel="stylesheet" href="../styles/style.css">
+		<link rel="stylesheet" href="../styles/employee-signup.css">
+		<script src="https://kit.fontawesome.com/8bedfba391.js" crossorigin="anonymous"></script>
+		<script src="../javascript/employee-signup.js"></script>
+	</head>
+	<body>
+		<header id="header">
+      <i class="fa-solid fa-bars"></i>
+      <h1>Trackgenix S.A.</h1>
+      <ul class="social-media">
+        <li>
+          <a class="fa-brands fa-facebook" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-instagram" href=""#></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-twitter" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-linkedin" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-github" href="#"></a>
+        </li>
+      </ul>
+    </header>
+		<nav id="sidebar">
+      <form action="#">
+        <div class="input-container">
+          <input type="search" name="search" id="sidebar-search" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </form>
+      <p>Menu</p>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">Sign up</a>
+        </li>
+        <li>
+          <a href="login.html">Log in</a>
+        </li>
+        <li>
+          <a href="#">Contact info</a>
+        </li>
+      </ul>
+    </nav>
+		<main>
+			<div class="signup-container">
+        <h2>Sign up</h2>
+        <form action="#" id="signup-form">
+          <label for="signup-name">Name
+            <input type="text" name="signup-name" id="signup-name">
+          </label>
+          <label for="signup-last-name">Last name
+            <input type="text" name="signup-last-name" id="signup-last-name">
+          </label>
+          <label for="signup-idn">ID number
+            <input type="number" name="signup-idn" id="signup-idn">
+          </label>
+          <label for="signup-birth-date">Birth date
+            <input type="date" name="signup-birth-date" id="signup-birth-date">
+          </label>
+          <label for="signup-phone">Phone number
+            <input type="number" name="signup-phone" id="signup-phone">
+          </label>
+          <label for="signup-address">Address
+            <input type="text" name="signup-address" id="signup-address">
+          </label>
+          <label for="signup-city">City
+            <input type="text" name="signup-city" id="signup-city">
+          </label>
+          <label for="signup-zip-code">Zip code
+            <input type="number" name="signup-zip-code" id="signup-zip-code">
+          </label>
+          <label for="signup-email">Email
+            <input type="email" name="signup-email" id="signup-email">
+          </label>
+          <label for="signup-pass">Password
+            <input type="password" name="signup-pass" id="signup-pass">
+          </label>
+          <label for="signup-repeated-pass">Repeat password
+            <input type="password" name="signup-repeated-pass" id="signup-repeated-pass">
+          </label>
+          <input type="button" id="signup-create-button" value="Create">
+        </form>
+      </div>
+      <div id="signup-modal" class="modal">
+        <div class="modal-container">
+          <div class="modal-header">
+            <p id="modal-title"></p>
+            <i class="fa-solid fa-xmark close"></i>
+          </div>
+          <div class="modal-content">
+          </div>
+        </div>
+      </div>
+		</main>
+		<footer id="footer">
+      <ul class="social-media">
+        <li>
+          <a class="fa-brands fa-facebook" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-instagram" href=""#></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-twitter" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-linkedin" href="#"></a>
+        </li>
+        <li>
+          <a class="fa-brands fa-github" href="#"></a>
+        </li>
+      </ul>
+      <p>Copyright 2022 Trackgenix. All rights reserved.</p>
+    </footer>
+	</body>
+</html>

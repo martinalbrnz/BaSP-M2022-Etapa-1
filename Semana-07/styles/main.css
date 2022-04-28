@@ -1,0 +1,293 @@
+/* GLOBAL SECTION */
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 30px 0;
+}
+
+section:not(:last-child) {
+  box-shadow: 0px -1px 0px 0px #aaaaaa inset;
+}
+
+.more-info-link {
+  width: fit-content;
+  height: 37px;
+  padding: 9.5px 36px;
+  border-radius: 5px;
+  border: 1px solid #ff5500;
+  text-align: center;
+  line-height: 16px;
+  color: #ff5500;
+}
+
+/* WHAT IS TRACKGENIX SECTION  */
+
+#what-is-trackgenix > article {
+  flex-grow: 1;
+}
+
+#what-is-trackgenix > article > h2{
+  margin: 20px 0;
+}
+
+#what-is-trackgenix > img {
+  order: -1;
+  max-width: 100%;
+}
+
+#what-is-trackgenix > article > a {
+  display: none;
+}
+
+/* FUNCTIONALITIES SECTION */
+
+#functionalities {
+  gap: 15px;
+}
+
+#functionalities > h2 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.functionalities-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.functionalities-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.functionalities-item-icon {
+  align-self: center;
+  font-size: 40px;
+}
+
+/* WHY TRACKGENIX */
+
+#why-trackgenix > article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#why-trackgenix > article > h2 {
+  margin: 20px 0 10px 0;
+}
+
+#why-trackgenix > article > ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#why-trackgenix > img {
+  flex-grow: 1;
+  flex-basis: 300px;
+  order: -1;
+  max-width: 100%;
+}
+
+/* CONTACT US SECTION */
+
+#contact-us > h2 {
+  margin-bottom: 20px;
+}
+
+#contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+#contact-form > .input-container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((466px - 32px - 32px) / 2);
+  flex-grow: 1;
+}
+
+#contact-form > .input-container > input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #555;
+}
+
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+.form-button {
+  flex-basis: 181px;
+  flex-grow: 1;
+  height: 46px;
+  padding: 14px 36px;
+  border: 1px solid #ff5500;
+  border-radius: 5px;
+}
+
+.contact-form-send {
+  background-color: #ff5500;
+  color:  #fff;
+}
+
+.contact-form-reset {
+  background-color: #fff;
+  color: #ff5500;
+}
+
+/* OUR HISTORY */
+
+#our-history {
+  align-items: stretch;
+  gap: 20px;
+}
+
+#our-history > h2 {
+  width: 100%;
+}
+
+.our-history-paragraph {
+  height: fit-content;
+  max-width: 100%;
+}
+
+#our-history > img {
+  order: -1;
+  max-width: 100%;
+}
+
+/* OUR SERVICES */
+
+#our-services {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 15px;
+  width: 100%;
+}
+
+.our-services-item {
+  width: 100%;
+}
+
+.our-services-item > ol {
+  padding-left: 20px;
+}
+
+/* MEDIA QUERY SCREEN WIDTH EQUAL OR BIGGER THAN 481PX */
+
+@media screen and (min-width: 481px) {
+  /* WHAT IS TRACKGENIX SECTION  */
+
+  #what-is-trackgenix > article > a {
+    display: block;
+  }
+
+  /* FUNCTIONALITIES */
+
+  .functionalities-item {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .functionalities-item-icon {
+    font-size: 100px;
+  }
+
+  .functionalities-item-icon > i {
+    text-align: center;
+    width: 100px;
+  }
+
+  /* OUR SERVICES */
+
+  #our-services {
+    justify-content: space-around;
+  }
+
+  .our-services-item {
+    flex-basis: calc(381px / 3);
+  }
+}
+
+/* MEDIA QUERY SCREEN WIDTH EQUAL OR BIGGER THAN 1024PX */
+
+@media screen and (min-width: 1024px) {
+  /* WHAT IS TRACKGENIX SECTION  */
+
+  #what-is-trackgenix > img {
+    flex-grow: 1;
+    flex-basis: 300px;
+    order: 2;
+    width: 200px;
+  }
+
+  #what-is-trackgenix > article {
+    flex-basis: 280px;
+    flex-grow: 1;
+    margin-right: 30px;
+    width: 200px;
+    line-height: 30px;
+  }
+
+  #what-is-trackgenix > article > p {
+    margin-bottom: 40px;
+  }
+
+  /* FUNCTIONALITIES */
+
+  .functionalities-item {
+    flex-grow: 1;
+    flex-basis: 40%;
+  }
+
+  /* WHY TRACKGENIX */
+
+  #why-trackgenix > img {
+    flex-basis: 200px;
+    flex-grow: 1;
+    order: 2;
+    width: 200px;
+  }
+
+  #why-trackgenix > article {
+    flex-basis: 280px;
+    flex-grow: 1;
+    margin-right: 30px;
+    line-height: 30px;
+  }
+
+  #why-trackgenix > article > p {
+    margin-bottom: 40px;
+  }
+
+  /* OUR HISTORY */
+
+  #our-history > img {
+    flex-grow: 3;
+    flex-basis: 220px;
+    width: 220px;
+    order: 1;
+  }
+
+  .our-history-paragraph {
+    flex-grow: 1;
+    order: 2;
+    flex-basis: 432px; 
+  }
+
+}

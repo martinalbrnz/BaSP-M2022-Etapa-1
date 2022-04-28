@@ -34,3 +34,13 @@ Changed the folder structure to include the javascript files.
 Bonus: Validations in landing contact form.
 Every commit must have the prefix "BaSP-W06-2022: "
 Page can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
+
+## Week 07
+This week we continuned with Javascript. 
+We made requests to the RR API using fetch, but it'll work only if all validations are ok.
+The starter folder is the last version of "Semana-06" (at 04/26/2022).
+On the login page, the only successful login is: 
+user: rose@radiumrocket.com password: BaSP2022
+Bonus: Form validations shown on modal.
+Every commit must have the prefix "BaSP-W07-2022: "
+Page can be seen in https://martinalbrnz.github.io/BaSP-M2022-Etapa-1/Semana-07/views/index.html
