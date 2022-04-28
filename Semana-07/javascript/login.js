@@ -11,6 +11,7 @@ window.onload = function () {
 
   function validateEmail() {
     var emailRegExp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+    var isValidated = false;
     
     if (loginEmail.value == '') {
       emailInlineAlert.textContent = 'Email is required';
@@ -22,7 +23,9 @@ window.onload = function () {
       inputValues[0] = 'Error! '.concat(emailInlineAlert.textContent);
     } else {
       inputValues[0] = loginEmail.value;
+      isValidated = true;
     }
+    return isValidated;
   }
 
   function quitEmailAlerts() {
@@ -38,6 +41,8 @@ window.onload = function () {
   passwordInlineAlert.classList.add('inline-alerts');
 
   function validatePassword() {
+    var isValidated = false;
+
     if (loginPassword.value.length == 0) {
       passwordInlineAlert.textContent = 'Password is required';
       loginPassword.insertAdjacentElement('afterend', passwordInlineAlert);
@@ -49,7 +54,9 @@ window.onload = function () {
       inputValues[1] = 'Error! '.concat(passwordInlineAlert.textContent);
     } else {
       inputValues[1] = loginPassword.value;
+      isValidated = true;
     }
+    return isValidated;
   }
 
   function quitPasswordAlerts() {
@@ -69,7 +76,7 @@ window.onload = function () {
   var loginModalListItems = document.getElementsByClassName('modal-list-item');
   
   loginCreateButton.addEventListener('click', loginCreateButtonModal);
-  loginModalCloseButton.addEventListener('click', loginCreateButtonModal);
+  loginModalCloseButton.addEventListener('click', function(){loginModal.classList.toggle('show-modal');});
   
   function loginCreateButtonModal() {
     validateEmail(loginEmail);
@@ -99,9 +106,44 @@ window.onload = function () {
     }
     
     loginModal.classList.toggle('show-modal');
+
+    if (validatePassword(loginPassword) && validateEmail(loginEmail)) {
+      var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
+      var selectors = [loginEmail, loginPassword];
+
+      loginFetch(url, selectors);
+    }
   };
 };
 
+/*--------------- AUX FUNCTIONS, VALIDATORS AND UTILITIES ---------------*/
+// i could have this functions on other file and import the functions i need
+
+// list -> string
+// [name, password]=> '?name=nameinput&password=passwordinput'
+function joinQueryParams(selectorsList) {
+  var myArr = [];
+  for (var x = 0 ; x < selectorsList.length ; x++) {
+    myArr[x] = selectorsList[x].name.concat('=', selectorsList[x].value);
+  }
+
+  return '?'.concat(myArr.join('&'));
+}
+
+function loginFetch(url, selectorsList) {
+  var fetchUrl = url.concat(joinQueryParams(selectorsList));
+  fetch(fetchUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(jsonResponse) {
+      var header = jsonResponse.success ? 'Login successful!' : 'Error!'
+      alert(header.concat('\n', jsonResponse.msg));
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+}
 /* 
 NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/YEAR/CENTURY):
 - ELEMENTS ARE ORDERED BY APPEARANCE IN THE HTML FILE.
