@@ -76,7 +76,9 @@ window.onload = function () {
   var loginModalListItems = document.getElementsByClassName('modal-list-item');
   
   loginCreateButton.addEventListener('click', loginCreateButtonModal);
-  loginModalCloseButton.addEventListener('click', function(){loginModal.classList.toggle('show-modal');});
+  loginModalCloseButton.addEventListener('click', function() {
+    loginModal.classList.toggle('show-modal');
+  });
   
   function loginCreateButtonModal() {
     validateEmail(loginEmail);
@@ -130,6 +132,9 @@ function joinQueryParams(selectorsList) {
   return '?'.concat(myArr.join('&'));
 }
 
+// string, list -> alert
+// url is a string
+// selectorsList is a list of selectors 
 function loginFetch(url, selectorsList) {
   var fetchUrl = url.concat(joinQueryParams(selectorsList));
   fetch(fetchUrl)
@@ -137,7 +142,7 @@ function loginFetch(url, selectorsList) {
       return response.json();
     })
     .then(function(jsonResponse) {
-      var header = jsonResponse.success ? 'Login successful!' : 'Error!'
+      var header = jsonResponse.success ? 'Login successful!' : 'Error!';
       alert(header.concat('\n', jsonResponse.msg));
     })
     .catch(function(error) {

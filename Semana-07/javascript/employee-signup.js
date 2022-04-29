@@ -6,6 +6,8 @@ window.onload = function () {
   var inputLabels = ['Name', 'Last name', 'ID number', 'Birth date', 'Phone', 'Address', 'City', 'Zip code', 
   'Email', 'Password', 'Repeated password'];
 
+
+
   // NAME
   var signupName = document.getElementById('signup-name');
   signupName.onblur = validateName;
@@ -14,6 +16,8 @@ window.onload = function () {
   signupNameInlineAlert.classList.add('inline-alerts');
 
   function validateName() {
+    var isValidated = false;
+
     if (signupName.value.trim() == '') {
       signupNameInlineAlert.textContent = 'Name is a required field';
       signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
@@ -22,13 +26,15 @@ window.onload = function () {
       signupNameInlineAlert.textContent = 'Name must have at least 3 characters';
       signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
-    } else if (!isCharsOrSpace(signupName.value)) {
-      signupNameInlineAlert.textContent = 'Name only can contain letters';
+    } else if (!isChars(signupName.value)) {
+      signupNameInlineAlert.textContent = 'Name can only contain letters';
       signupName.insertAdjacentElement('afterend', signupNameInlineAlert);
       inputValues[0] = 'Error! '.concat(signupNameInlineAlert.textContent);
     } else {
       inputValues[0] = signupName.value.trim();
+      isValidated = true;
     }
+    return isValidated;
   }
 
   function quitSignupNameAlerts() {
@@ -43,6 +49,8 @@ window.onload = function () {
   signupSurnameInlineAlert.classList.add('inline-alerts');
 
   function validateSurname() {
+    var isValidated = false;
+
     if (signupLastName.value.trim() == '') {
       signupSurnameInlineAlert.textContent = 'Last name is a required field';
       signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
@@ -51,13 +59,16 @@ window.onload = function () {
       signupSurnameInlineAlert.textContent = 'Last name must have at least 3 characters';
       signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
-    } else if (!isCharsOrSpace(signupLastName.value)) {
-      signupSurnameInlineAlert.textContent = 'Last name only can contain letters';
+    } else if (!isChars(signupLastName.value)) {
+      signupSurnameInlineAlert.textContent = 'Last name can only contain letters';
       signupLastName.insertAdjacentElement('afterend', signupSurnameInlineAlert);
       inputValues[1] = 'Error! '.concat(signupSurnameInlineAlert.textContent);
     } else {
       inputValues[1] = signupLastName.value.trim();
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupSurnameAlerts() {
@@ -72,14 +83,16 @@ window.onload = function () {
   signupIDNumberInlineAlert.classList.add('inline-alerts');
 
   function validateIDNumber() {
+    var isValidated = false;
+
     if (signupIDNumber.value == '') {
       signupIDNumberInlineAlert.textContent = 'ID Number is a required field';
       signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
     } 
-    else if (signupIDNumber.value.length < 8) {
+    else if (!(signupIDNumber.value.length == 8 || signupIDNumber.value.length == 7)) {
       signupIDNumberInlineAlert.textContent =
-      'ID Number must have at least 8 characters';
+      'ID Number must have 7 or 8 characters';
       signupIDNumber.insertAdjacentElement('afterend', signupIDNumberInlineAlert);
       inputValues[2] = 'Error! '.concat(signupIDNumberInlineAlert.textContent);
     } 
@@ -90,7 +103,10 @@ window.onload = function () {
     } 
     else {
       inputValues[2] = signupIDNumber.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupIDNumberAlerts() {
@@ -105,6 +121,8 @@ window.onload = function () {
   signupBirthInlineAlert.classList.add('inline-alerts');
 
   function validateBirth() {
+    var isValidated = false;
+
     if (signupBirth.value == '') {
       signupBirthInlineAlert.textContent = 'Birth date is a required field';
       signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
@@ -114,8 +132,11 @@ window.onload = function () {
       signupBirth.insertAdjacentElement('afterend', signupBirthInlineAlert);
       inputValues[3] = 'Error! '.concat(signupBirthInlineAlert.textContent);
     } else {
-      inputValues[3] = signupBirth.value;
+      inputValues[3] = fromYearMonthDayToMonthDayYear(signupBirth.value);
+      isValidated = true; 
     }
+
+    return isValidated;
   }
 
   function quitSignupBirthAlerts() {
@@ -130,6 +151,8 @@ window.onload = function () {
   signupPhoneInlineAlert.classList.add('inline-alerts');
 
   function validatePhone() {
+    var isValidated = false;
+
     if (signupPhone.value == '') {
       signupPhoneInlineAlert.textContent = 'Phone is a required field';
       signupPhone.insertAdjacentElement('afterend', signupPhoneInlineAlert);
@@ -148,7 +171,10 @@ window.onload = function () {
       inputValues[4] = 'Error! '.concat(signupPhoneInlineAlert.textContent);
     } else {
       inputValues[4] = signupPhone.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupPhoneAlerts() {
@@ -163,6 +189,8 @@ window.onload = function () {
   signupAddressInlineAlert.classList.add('inline-alerts');
 
   function validateAddress() {
+    var isValidated = false;
+
     if (signupAddress.value.trim() == '') {
       signupAddressInlineAlert.textContent = 'Address is a required field';
       signupAddress.insertAdjacentElement('afterend', signupAddressInlineAlert);
@@ -177,7 +205,10 @@ window.onload = function () {
       inputValues[5] = 'Error! '.concat(signupAddressInlineAlert.textContent);
     } else {
       inputValues[5] = signupAddress.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupAddressAlerts() {
@@ -192,6 +223,8 @@ window.onload = function () {
   signupCityInlineAlert.classList.add('inline-alerts');
 
   function validateCity() {
+    var isValidated = false;
+
     if (signupCity.value.trim() == '') {
       signupCityInlineAlert.textContent = 'City name is a required field';
       signupCity.insertAdjacentElement('afterend', signupCityInlineAlert);
@@ -202,7 +235,10 @@ window.onload = function () {
       inputValues[6] = 'Error! '.concat(signupCityInlineAlert.textContent);
     } else {
       inputValues[6] = signupCity.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupCityAlerts() {
@@ -217,6 +253,8 @@ window.onload = function () {
   signupZipInlineAlert.classList.add('inline-alerts');
 
   function validateZipCode() {
+    var isValidated = false;
+
     if (signupZip.value == '') {
       signupZipInlineAlert.textContent = 'ZIP Code is a required field';
       signupZip.insertAdjacentElement('afterend', signupZipInlineAlert);
@@ -233,7 +271,10 @@ window.onload = function () {
       inputValues[7] = 'Error! '.concat(signupZipInlineAlert.textContent);
     } else {
       inputValues[7] = signupZip.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupZipAlerts() {
@@ -248,6 +289,7 @@ window.onload = function () {
   signupEmailInlineAlert.classList.add('inline-alerts');
 
   function validateEmail() {
+    var isValidated = false;
     var emailRegExp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
     if (signupEmail.value.trim() == '') {
@@ -260,7 +302,10 @@ window.onload = function () {
       inputValues[8] = 'Error! '.concat(signupEmailInlineAlert.textContent);
     } else {
       inputValues[8] = signupEmail.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupEmailAlerts() {
@@ -275,6 +320,8 @@ window.onload = function () {
   signupPasswordInlineAlert.classList.add('inline-alerts');
 
   function validatePassword() {
+    var isValidated = false;
+
     if (signupPassword.value.length == 0) {
       signupPasswordInlineAlert.textContent = 'Password is required';
       signupPassword.insertAdjacentElement('afterend', signupPasswordInlineAlert);
@@ -296,7 +343,10 @@ window.onload = function () {
       inputValues[9] = 'Error! '.concat(signupPasswordInlineAlert.textContent);
     } else {
       inputValues[9] = signupPassword.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupPasswordAlerts() {
@@ -311,6 +361,8 @@ window.onload = function () {
   signupRepeatedPasswordInlineAlert.classList.add('inline-alerts');
 
   function validateRepeatedPassword() {
+    var isValidated = false;
+
     if (signupRepeatedPassword.value.length == 0) {
       signupRepeatedPasswordInlineAlert.textContent = 'You must repeat the password';
       signupRepeatedPassword.insertAdjacentElement('afterend', signupRepeatedPasswordInlineAlert);
@@ -321,7 +373,10 @@ window.onload = function () {
       inputValues[10] = 'Error! '.concat(signupRepeatedPasswordInlineAlert.textContent);
     } else {
       inputValues[10] = signupRepeatedPassword.value;
+      isValidated = true;
     }
+
+    return isValidated;
   }
 
   function quitSignupRepeatedPasswordAlerts() {
@@ -338,7 +393,9 @@ window.onload = function () {
   var signupModalListItems = document.getElementsByClassName('modal-list-item');
 
   signupCreateButton.onclick = signupCreateButtonModal;
-  signupModalCloseButton.onclick = signupCreateButtonModal;
+  signupModalCloseButton.onclick = function() {
+    signupModal.classList.toggle('show-modal');
+  };
 
   function signupCreateButtonModal() {
     validateName(signupName);
@@ -376,6 +433,54 @@ window.onload = function () {
     }
     
     signupModal.classList.toggle('show-modal');
+
+    var validationsList = [
+      validateName(signupName),
+      validateSurname(signupLastName),
+      validateIDNumber(signupIDNumber),
+      validateBirth(signupBirth),
+      validatePhone(signupPhone),
+      validateAddress(signupAddress),
+      validateCity(signupCity),
+      validateZipCode(signupZip),
+      validateEmail(signupEmail),
+      validatePassword(signupPassword),
+      validateRepeatedPassword(signupRepeatedPassword)
+    ];
+
+    if (!validationsList.includes(false)) {
+      var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+      var selectors = [
+        signupName,
+        signupLastName,
+        signupIDNumber,
+        signupBirth,
+        signupPhone,
+        signupAddress,
+        signupCity,
+        signupZip,
+        signupEmail,
+        signupPassword
+      ];
+
+      signupFetch(url, selectors);
+    }
+  }
+
+    // CHECK LOCALSTORAGE
+  // local storage have {id, name, lastName, dni, dob, phone, address, city, zip, email, password}
+  if (localStorage.getItem('id') != null) {
+    signupName.value = localStorage.getItem("name");
+    signupLastName.value = localStorage.getItem("lastName");
+    signupIDNumber.value = localStorage.getItem("dni");
+    signupBirth.value = localStorage.getItem("dob");
+    signupPhone.value = localStorage.getItem("phone");
+    signupAddress.value = localStorage.getItem("address");
+    signupCity.value = localStorage.getItem("city");
+    signupZip.value = localStorage.getItem("zip");
+    signupEmail.value = localStorage.getItem("email");
+    signupPassword.value = localStorage.getItem("password");
+    signupRepeatedPassword.value = localStorage.getItem("password");
   }
 };
 
@@ -514,6 +619,100 @@ function isFullAge(date) {
   return new Date(thisMoment - inputDate).getFullYear() - 1970 >= 18;
 }
 
+// YYYY-MM-DD -> MM/DD/YYYY
+// because i have yyyy-mm-dd format and the backend request mm/dd/yyyy :( 
+function fromYearMonthDayToMonthDayYear(date) {
+  var year = date.substr(0, 4);
+  var month = date.substr(5, 2);
+  var day = date.substr(8, 2);
+  var newDate = month.concat('/', day, '/', year)
+
+  return newDate;
+}
+
+// MM/DD/YYYY -> YYYY-MM-DD
+// because i have yyyy-mm-dd format and the backend request mm/dd/yyyy :( 
+  function fromMonthDayYearToYearMonthDay(date) {
+    var year = date.substr(6, 4);
+    var month = date.substr(0, 2);
+    var day = date.substr(3, 2);
+    var newDate = year.concat('-', month, '-', day)
+  
+    return newDate;
+  }
+// string -> string
+// 'this-is-not-camel' => 'thisIsNotCamel'
+// 'that-was-awesome' => 'thatWasAwesome'
+// in case any name parameter is written on kebab
+function kebabToCamel(str) {
+  var myArr = str.split('-');
+  for (var x = 1 ; x < myArr.length ; x++) {
+    myArr[x] = myArr[x].substring(0, 1).toUpperCase().concat(myArr[x].substring(1));
+  }
+
+  return myArr.join('');
+}
+
+// list -> string
+// [name, password] => '?name=nameinput&password=passwordinput'
+// so i can generalize a bit the query params
+function joinQueryParams(selectorsList) {
+  var myArr = [];
+
+  for (var x = 0 ; x < selectorsList.length ; x++) {
+
+    // So the date is formatted as MM/DD/YYYY instead of YYYY-MM-DD
+    if (selectorsList[x].name != 'dob') {
+      myArr[x] = kebabToCamel(selectorsList[x].name).concat('=', selectorsList[x].value);
+    } else {
+      myArr[x] = kebabToCamel(selectorsList[x].name).concat('=', fromYearMonthDayToMonthDayYear(selectorsList[x].value));
+    }
+  }
+
+  return '?'.concat(myArr.join('&'));
+}
+
+// string, list -> alert
+// url is a string
+// selectorsList is a list of selectors 
+function signupFetch(url, selectorsList) {
+  var fetchUrl = url.concat(joinQueryParams(selectorsList));
+  fetch(fetchUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(jsonResponse) {
+      var header = jsonResponse.success ? 'Login successful!' : 'Error!';
+      alert(header.concat('\n', jsonResponse.msg));
+
+      // data is {id, name, lastName, dni, dob, phone, address, city, zip, email, password}
+      if (jsonResponse.success) {
+        var data = jsonResponse.data;
+        storeRequestOnLocalStorage(data);
+      }
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+}
+
+// if id exists, then i don't change it
+function storeRequestOnLocalStorage(data) {
+  if(localStorage.getItem('id') == null) {
+    localStorage.setItem("id", data.id);
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("lastName", data.lastName);
+    localStorage.setItem("dni", data.dni);
+    localStorage.setItem("dob", fromMonthDayYearToYearMonthDay(data.dob));
+    localStorage.setItem("phone", data.phone);
+    localStorage.setItem("address", data.address);
+    localStorage.setItem("city", data.city);
+    localStorage.setItem("zip", data.zip);
+    localStorage.setItem("email", data.email);
+    localStorage.setItem("password", data.password);
+  }
+}
+
 /* 
 NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/YEAR/CENTURY):
 - ELEMENTS ARE ORDERED BY APPEARANCE IN THE HTML FILE.
@@ -523,6 +722,6 @@ NOTES FOR ANYONE WHO MANTAIN THIS CODE IN THE FUTURE (A.K.A. ME IN A WEEK/MONTH/
 - IN SOME CASES, YOU MIGHT BE WONDERING, WHY DON'T YOU USE REGEX? WELL... I'M NOT ALLOWED'.
 - SAME APPLIES FOR EVERYTHING THAT CAN BE DONE WITH ES6 OR NEWER.
 - HAVE FUN!
-*/
 
 // a comment line for those regex i did not use F
+*/
