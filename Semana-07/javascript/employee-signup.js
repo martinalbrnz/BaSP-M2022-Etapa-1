@@ -660,7 +660,6 @@ function joinQueryParams(selectorsList) {
   var myArr = [];
 
   for (var x = 0 ; x < selectorsList.length ; x++) {
-
     // So the date is formatted as MM/DD/YYYY instead of YYYY-MM-DD
     if (selectorsList[x].name != 'dob') {
       myArr[x] = kebabToCamel(selectorsList[x].name).concat('=', selectorsList[x].value);
@@ -698,19 +697,17 @@ function signupFetch(url, selectorsList) {
 
 // if id exists, then i don't change it
 function storeRequestOnLocalStorage(data) {
-  if(localStorage.getItem('id') == null) {
-    localStorage.setItem("id", data.id);
-    localStorage.setItem("name", data.name);
-    localStorage.setItem("lastName", data.lastName);
-    localStorage.setItem("dni", data.dni);
-    localStorage.setItem("dob", fromMonthDayYearToYearMonthDay(data.dob));
-    localStorage.setItem("phone", data.phone);
-    localStorage.setItem("address", data.address);
-    localStorage.setItem("city", data.city);
-    localStorage.setItem("zip", data.zip);
-    localStorage.setItem("email", data.email);
-    localStorage.setItem("password", data.password);
-  }
+  localStorage.setItem("id", data.id);
+  localStorage.setItem("name", data.name);
+  localStorage.setItem("lastName", data.lastName);
+  localStorage.setItem("dni", data.dni);
+  localStorage.setItem("dob", fromMonthDayYearToYearMonthDay(data.dob));
+  localStorage.setItem("phone", data.phone);
+  localStorage.setItem("address", data.address);
+  localStorage.setItem("city", data.city);
+  localStorage.setItem("zip", data.zip);
+  localStorage.setItem("email", data.email);
+  localStorage.setItem("password", data.password);
 }
 
 /* 
